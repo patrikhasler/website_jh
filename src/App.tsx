@@ -5,6 +5,7 @@ import { Header } from "./components/Header";
 import { AboutPage } from "./components/AboutPage";
 import { SocialMediaPage } from "./components/SocialMediaPage";
 import { GalleryPage } from "./components/GalleryPage";
+import { CareerPage } from "./components/CareerPage";
 import { InfoDrawer } from "./components/InfoDrawer";
 import { ParticleBackground } from "./components/ParticleBackground";
 import { ScrambleText } from "./components/ScrambleText";
@@ -56,6 +57,7 @@ function App() {
   const isAboutPage = path === "/about";
   const isSocialMediaPage = path === "/social-media";
   const isGalleryPage = path === "/gallery";
+  const isCareerPage = path === "/career";
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -108,6 +110,13 @@ function App() {
     }
   };
 
+  const navigateToCareer = () => {
+    if (window.location.pathname !== "/career") {
+      window.history.pushState({}, "", "/career");
+      setPath("/career");
+    }
+  };
+
   useEffect(() => {
     const origin = "https://jonashasler.ch";
 
@@ -131,6 +140,11 @@ function App() {
         title: "Gallery | Jonas Hasler",
         description: "Gallery of selected moments from Jonas Hasler's halfpipe, slopestyle and big air sessions.",
         canonicalPath: "/gallery"
+      },
+      "/career": {
+        title: "Career | Jonas Hasler",
+        description: "Career, achievements and timeline of Swiss snowboarder Jonas Hasler – Olympian, national team member and freestyle athlete.",
+        canonicalPath: "/career"
       }
     };
 
@@ -176,6 +190,8 @@ function App() {
         <SocialMediaPage />
       ) : isGalleryPage ? (
         <GalleryPage />
+      ) : isCareerPage ? (
+        <CareerPage />
       ) : (
         <>
           <main className="relative z-20 flex min-h-screen flex-1 items-center justify-center px-4 pb-32 pt-24 md:px-8 md:pt-28">
@@ -219,6 +235,7 @@ function App() {
         onNavigateHome={navigateToHome}
         onNavigateSocialMedia={navigateToSocialMedia}
         onNavigateGallery={navigateToGallery}
+        onNavigateCareer={navigateToCareer}
       />
     </div>
   );
