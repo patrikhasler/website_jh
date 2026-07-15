@@ -7,39 +7,39 @@ type TimelineEntry = {
 const timeline: TimelineEntry[] = [
   {
     year: "2017 – 2019",
-    title: "Die ersten Schritte",
+    title: "The First Steps",
     description:
-      "Jonas beginnt mit dem organisierten Snowboardtraining am Caumasee und auf dem Laaxer Gletscher. Schon früh zeigt sich sein Talent im Halfpipe-Riding. Die Trainings im Skiclub Flims legen das Fundament für eine internationale Karriere."
+      "Jonas begins structured snowboard training at Caumasee and on the Laax glacier. His talent for halfpipe riding becomes evident early on. Training with Skiclub Flims lays the foundation for an international career."
   },
   {
     year: "2020 – 2021",
-    title: "Aufnahme in den Swiss Snowboard Nationalkader",
+    title: "Selected for the Swiss Snowboard National Team",
     description:
-      "Nach konstant starken Resultaten auf nationaler Ebene wird Jonas in den Swiss Snowboard Nationalkader aufgenommen. Die Aufnahme bestätigt sein ausserordentliches Talent und ebnet den Weg für internationale Wettkämpfe im Weltcup-Zirkus."
+      "Following consistently strong results at national level, Jonas is selected for the Swiss Snowboard National Team. The call-up confirms his exceptional talent and opens the door to international competition on the World Cup circuit."
   },
   {
     year: "2021",
-    title: "Europacup Overall Halfpipe – Sieg U15",
+    title: "European Cup Overall Halfpipe – U15 Winner",
     description:
-      "Jonas krönt seine erste grosse internationale Saison mit dem Gesamtsieg im Europacup in der Kategorie U15. Der Titel unterstreicht seine überragende Leistungsfähigkeit in der Halfpipe und macht international auf ihn aufmerksam."
+      "Jonas crowns his first major international season with the overall victory in the European Cup U15 category. The title underlines his dominant performance in the halfpipe and puts him on the radar of the global snowboard community."
   },
   {
     year: "2022 – 2023",
-    title: "Junior World Championships & Nachwuchsathlet des Jahres",
+    title: "Junior World Championships & Junior Athlete of the Year",
     description:
-      "Mit zwei Podestplätzen an den Junior Weltmeisterschaften in der Halfpipe setzt Jonas ein deutliches Zeichen. Wenig später wird er zum Junior Nachwuchsathlet des Jahres 2023 ausgezeichnet – eine Ehrung, die seine aussergewöhnliche Entwicklung würdigt."
+      "Two podium finishes at the Junior World Championships in halfpipe make a clear statement. Shortly after, Jonas is named Junior Athlete of the Year 2023 by Swiss Snowboard – an honour that recognises his remarkable development."
   },
   {
     year: "2023 – 2024",
-    title: "Weltcup Top-10 & Snow League",
+    title: "World Cup Top-10 & Snow League",
     description:
-      "Jonas etabliert sich im Weltcup-Zirkus: Mehr als fünf Top-10-Platzierungen in Halfpipe, Slopestyle und Big Air belegen seine Vielseitigkeit. Zusätzlich zählt er in der Snow League zu den stärksten Athleten und sammelt drei Podeste."
+      "Jonas establishes himself on the World Cup circuit with more than five top-10 finishes across halfpipe, slopestyle and big air, proving his versatility. He also claims three podiums in the Snow League."
   },
   {
     year: "2026",
-    title: "Olympische Spiele",
+    title: "Olympic Games",
     description:
-      "Der Höhepunkt seiner bisherigen Karriere: Jonas Hasler qualifiziert sich für die Olympischen Winterspiele und repräsentiert die Schweiz auf der weltgrössten Bühne des Wintersports. Ein Meilenstein, auf den Jahre harter Arbeit, Entbehrung und leidenschaftliches Training hingeführt haben."
+      "The pinnacle of his career so far: Jonas Hasler qualifies for the Winter Olympic Games and represents Switzerland on the world's biggest stage in winter sport – a milestone built on years of hard work, sacrifice and passionate training."
   }
 ];
 
@@ -67,11 +67,11 @@ export function CareerPage() {
             Career
           </h1>
           <p className="mt-5 max-w-2xl font-sans text-base leading-relaxed text-white/65 md:text-lg">
-            Jonas Hasler wurde am 1. Juni 2006 in Laax geboren – einem der bekanntesten Snowboard-Hotspots
-            der Welt. Was als Kindheitsleidenschaft auf dem Laaxer Gletscher begann, hat sich zu einer
-            beeindruckenden internationalen Karriere entwickelt. Mit gerade einmal 20 Jahren zählt Jonas
-            bereits zu den vielseitigsten Freestyle-Snowboardern der Schweiz – konkurrenzfähig in
-            Halfpipe, Slopestyle und Big Air gleichzeitig.
+            Jonas Hasler was born on June 1, 2006 in Laax – one of the world's most iconic snowboard
+            destinations. What started as a childhood passion on the Laax glacier has grown into a
+            remarkable international career. At just 20 years old, Jonas is already one of Switzerland's
+            most versatile freestyle snowboarders, competing at the highest level in halfpipe, slopestyle
+            and big air simultaneously.
           </p>
         </header>
 
@@ -79,53 +79,50 @@ export function CareerPage() {
         <section className="mb-16 grid gap-8 md:grid-cols-2 md:gap-12">
           <div>
             <h2 className="mb-4 font-display text-2xl uppercase tracking-[0.06em] text-[#CCFF00]">
-              Der Athlet
+              The Athlete
             </h2>
             <div className="space-y-4 font-sans text-[0.95rem] leading-relaxed text-white/70">
               <p>
-                Jonas Hasler ist Mitglied des Schweizer Snowboard Nationalkaders und einer der
-                aufregendsten Nachwuchstalente des internationalen Freestyle-Snowboardings. Er
-                verbindet technische Präzision mit kreativem Stil – eine Kombination, die ihn in
-                allen drei Disziplinen gefährlich macht.
+                Jonas Hasler is a member of the Swiss Snowboard National Team and one of the
+                most exciting young talents in international freestyle snowboarding. He combines
+                technical precision with creative style – a blend that makes him a genuine
+                threat across all three disciplines.
               </p>
               <p>
-                Aufgewachsen am Fuss des Crap Sogn Gion in Laax hat Jonas den Gletscher als
-                zweites Zuhause und nutzt jede Trainingsstunde, um neue Tricks zu erlernen und
-                bestehende Moves auf ein höheres Niveau zu bringen. Sein Halfpipe-Riding ist
-                bekannt für hohe Amplituden und saubere Grab-Positionen; im Slopestyle und
-                Big Air überzeugt er mit Variationen und konsistenten Landungen.
+                Growing up at the foot of Crap Sogn Gion in Laax, Jonas treats the glacier as a
+                second home, using every training session to push his tricks higher and his style
+                sharper. His halfpipe riding is known for amplitude and clean grab positions;
+                in slopestyle and big air he impresses with creative variations and consistent
+                landings.
               </p>
               <p>
-                Neben dem Schnee gilt Jonas' Leidenschaft der Videografie, dem Drohnenfliegen
-                und der Luftfahrt – Interessen, die seinen kreativen Blick auf den Sport prägen
-                und ihm helfen, seine eigene visuelle Identität als Athlet aufzubauen.
+                Off the snow, Jonas is passionate about videography, drone flying and aviation –
+                interests that shape his creative eye for the sport and help him build his own
+                visual identity as an athlete.
               </p>
             </div>
           </div>
 
           <div>
             <h2 className="mb-4 font-display text-2xl uppercase tracking-[0.06em] text-[#CCFF00]">
-              Disziplinen &amp; Stil
+              Disciplines &amp; Style
             </h2>
             <div className="space-y-4 font-sans text-[0.95rem] leading-relaxed text-white/70">
               <p>
-                <strong className="font-semibold text-white">Halfpipe</strong> ist Jonas'
-                Kerndisziplin. In der Pipe dominiert er mit kontrollierten Rotationen,
-                scharfen Kanten und einer für sein Alter ungewöhnlichen Pipe-Awareness.
-                Mehrfach bewies er auf Weltcup-Niveau, dass er mit den besten Fahrern
-                der Welt mithalten kann.
+                <strong className="font-semibold text-white">Halfpipe</strong> is Jonas'
+                core discipline. In the pipe he dominates with controlled rotations, sharp
+                edge work and a pipe awareness rare for his age. He has repeatedly proven
+                at World Cup level that he can compete with the best riders in the world.
               </p>
               <p>
-                Im <strong className="font-semibold text-white">Slopestyle</strong> überzeugt
-                er durch Line-Auswahl und Flow: Jib-Elemente verknüpft er nahtlos mit
-                Jumps zu einem kohärenten Run, der sowohl technisch als auch optisch
-                beeindruckt.
+                In <strong className="font-semibold text-white">Slopestyle</strong> he stands
+                out through line selection and flow – linking jib features seamlessly into
+                jumps to create a cohesive run that impresses both technically and visually.
               </p>
               <p>
-                Im <strong className="font-semibold text-white">Big Air</strong> bringt Jonas
-                seine Luftzeit und Höhe voll zum Einsatz. Grosse Rotationen mit sauberen
-                Grabs machen ihn zu einem Wettkampf-Faktor, den Juroren und Gegner
-                gleichermassen respektieren.
+                In <strong className="font-semibold text-white">Big Air</strong> Jonas makes
+                full use of his hang time and height. Large rotations with clean grabs make
+                him a competitive force that judges and rivals alike respect.
               </p>
             </div>
           </div>
@@ -134,7 +131,7 @@ export function CareerPage() {
         {/* ── Timeline ── */}
         <section className="mb-16">
           <h2 className="mb-8 font-display text-2xl uppercase tracking-[0.06em] text-[#CCFF00]">
-            Karriere-Timeline
+            Career Timeline
           </h2>
 
           <ol className="relative border-l border-white/15">
@@ -161,17 +158,17 @@ export function CareerPage() {
         {/* ── Highlights grid ── */}
         <section className="mb-16">
           <h2 className="mb-8 font-display text-2xl uppercase tracking-[0.06em] text-[#CCFF00]">
-            Highlights auf einen Blick
+            Highlights at a Glance
           </h2>
 
           <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { dt: "Olympia", dd: "1× Olympionike" },
-              { dt: "Weltcup Top-10", dd: "Mehr als 5 Platzierungen" },
-              { dt: "Snow League", dd: "3× Podest" },
-              { dt: "Junior WM Halfpipe", dd: "2× Podest" },
-              { dt: "Europacup U15", dd: "Gesamtsieg Halfpipe" },
-              { dt: "Nachwuchsathlet 2023", dd: "Swiss Snowboard Award" }
+              { dt: "Olympics", dd: "1× Olympian" },
+              { dt: "World Cup Top-10", dd: "5+ Finishes" },
+              { dt: "Snow League", dd: "3× Podium" },
+              { dt: "Junior World Champs", dd: "2× Halfpipe Podium" },
+              { dt: "European Cup U15", dd: "Overall Halfpipe Win" },
+              { dt: "Junior Athlete 2023", dd: "Swiss Snowboard Award" }
             ].map(({ dt, dd }) => (
               <div
                 key={dt}
@@ -187,7 +184,7 @@ export function CareerPage() {
         {/* ── Partners & Sponsors ── */}
         <section>
           <h2 className="mb-6 font-display text-2xl uppercase tracking-[0.06em] text-[#CCFF00]">
-            Partner &amp; Sponsoren
+            Partners &amp; Sponsors
           </h2>
           <ul className="flex flex-wrap gap-3">
             {sponsors.map((s) => (
