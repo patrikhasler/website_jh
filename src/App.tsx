@@ -1,0 +1,227 @@
+import { motion } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
+import { FooterMarquee } from "./components/FooterMarquee";
+import { Header } from "./components/Header";
+import { AboutPage } from "./components/AboutPage";
+import { SocialMediaPage } from "./components/SocialMediaPage";
+import { GalleryPage } from "./components/GalleryPage";
+import { InfoDrawer } from "./components/InfoDrawer";
+import { ParticleBackground } from "./components/ParticleBackground";
+import { ScrambleText } from "./components/ScrambleText";
+
+const WORDS = ["AMPLITUDE", "STYLE", "CREATIVITY", "PRECISION", "PROGRESSION"];
+
+const BIO =
+  "I'm Jonas Hasler — professional snowboarder, olympian, national team member and halfpipe, slopestyle and big air rider. I craft bold runs that are intuitive, impactful, and built to stand out.";
+
+function AnimatedBio({ remountKey }: { remountKey: number }) {
+  const chars = useMemo(() => BIO.split(""), []);
+
+  return (
+    <motion.p
+      key={remountKey}
+      className="mt-5 max-w-[820px] text-center font-sans text-sm leading-relaxed text-white/80 md:text-lg"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.05
+          }
+        }
+      }}
+    >
+      {chars.map((char, index) => (
+        <motion.span
+          key={`${char}-${index}`}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { duration: 0.14, delay: index * 0.004 } }
+          }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </motion.p>
+  );
+}
+
+function App() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [bioKey, setBioKey] = useState(0);
+  const [path, setPath] = useState(() => window.location.pathname);
+
+  const isAboutPage = path === "/about";
+  const isSocialMediaPage = path === "/social-media";
+  const isGalleryPage = path === "/gallery";
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setWordIndex((current) => (current + 1) % WORDS.length);
+    }, 4000);
+
+    return () => window.clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setBioKey((current) => current + 1);
+    }, 7000);
+
+    return () => window.clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const onPopState = () => setPath(window.location.pathname);
+    window.addEventListener("popstate", onPopState);
+
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  const navigateToAbout = () => {
+    if (window.location.pathname !== "/about") {
+      window.history.pushState({}, "", "/about");
+      setPath("/about");
+    }
+  };
+
+  const navigateToHome = () => {
+    if (window.location.pathname !== "/") {
+      window.history.pushState({}, "", "/");
+      setPath("/");
+    }
+  };
+
+  const navigateToSocialMedia = () => {
+    if (window.location.pathname !== "/social-media") {
+      window.history.pushState({}, "", "/social-media");
+      setPath("/social-media");
+    }
+  };
+
+  const navigateToGallery = () => {
+    if (window.location.pathname !== "/gallery") {
+      window.history.pushState({}, "", "/gallery");
+      setPath("/gallery");
+    }
+  };
+
+  useEffect(() => {
+    const origin = "https://jonashasler.ch";
+
+    const seoByPath: Record<string, { title: string; description: string; canonicalPath: string }> = {
+      "/": {
+        title: "Jonas Hasler | Professional Snowboarder",
+        description: "Official website of Jonas Hasler, professional snowboarder, olympian and Swiss national team member in halfpipe, slopestyle and big air.",
+        canonicalPath: "/"
+      },
+      "/about": {
+        title: "About Jonas Hasler | Professional Snowboarder",
+        description: "Learn more about Jonas Hasler, Swiss national team member, olympian and freestyle snowboard athlete.",
+        canonicalPath: "/about"
+      },
+      "/social-media": {
+        title: "Jonas Hasler Social Media | Instagram & TikTok",
+        description: "Follow Jonas Hasler on social media for updates, competition moments and behind-the-scenes freestyle snowboard content.",
+        canonicalPath: "/social-media"
+      },
+      "/gallery": {
+        title: "Gallery | Jonas Hasler",
+        description: "Gallery of selected moments from Jonas Hasler's halfpipe, slopestyle and big air sessions.",
+        canonicalPath: "/gallery"
+      }
+    };
+
+    const seo = seoByPath[path] ?? seoByPath["/"];
+    document.title = seo.title;
+
+    const setMeta = (selector: string, attr: "name" | "property", key: string, value: string) => {
+      let meta = document.head.querySelector(selector) as HTMLMetaElement | null;
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute(attr, key);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", value);
+    };
+
+    setMeta('meta[name="description"]', "name", "description", seo.description);
+    setMeta('meta[property="og:title"]', "property", "og:title", seo.title);
+    setMeta('meta[property="og:description"]', "property", "og:description", seo.description);
+    setMeta('meta[property="og:url"]', "property", "og:url", `${origin}${seo.canonicalPath}`);
+    setMeta('meta[name="twitter:title"]', "name", "twitter:title", seo.title);
+    setMeta('meta[name="twitter:description"]', "name", "twitter:description", seo.description);
+
+    let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", `${origin}${seo.canonicalPath}`);
+  }, [path]);
+
+  return (
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-[#030014] text-white">
+      <ParticleBackground />
+      <div className="pointer-events-none absolute inset-0 z-[15] bg-[#02000f]/65" aria-hidden="true" />
+
+      <Header onOpenDrawer={() => setDrawerOpen(true)} onNavigateHome={navigateToHome} />
+
+      {isAboutPage ? (
+        <AboutPage />
+      ) : isSocialMediaPage ? (
+        <SocialMediaPage />
+      ) : isGalleryPage ? (
+        <GalleryPage />
+      ) : (
+        <>
+          <main className="relative z-20 flex min-h-screen flex-1 items-center justify-center px-4 pb-32 pt-24 md:px-8 md:pt-28">
+            <div className="relative z-20 flex w-full max-w-[1600px] flex-col items-center">
+              <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-white/50 md:text-xs">Halfpipe / Slopestyle / Big Air</p>
+
+              <h1 className="mt-4 text-center">
+                <span className="outline-text block font-display text-[17px] uppercase leading-[0.92] tracking-[0.06em] sm:text-[24px] md:text-[40px] lg:text-[56px] xl:text-[70px]">
+                  Built For
+                </span>
+                <span className="mt-0.5 block font-display text-[50px] uppercase leading-[0.86] tracking-[0.04em] text-[#CCFF00] sm:mt-1 sm:text-[78px] md:mt-2 md:text-[120px] lg:text-[150px] xl:text-[180px]">
+                  <ScrambleText text={WORDS[wordIndex]} />
+                </span>
+              </h1>
+
+              <AnimatedBio remountKey={bioKey} />
+            </div>
+          </main>
+
+          <div className="pointer-events-none absolute inset-0 z-10">
+            <img
+              src="/assets/14.jpg"
+              alt=""
+              className="hero-bg-base h-full w-full brightness-[0.55] grayscale contrast-125"
+            />
+            <img
+              src="/assets/14.jpg"
+              alt="Jonas Hasler snowboard action shot"
+              className="hero-bg-animated hero-bg-foreground pointer-events-auto absolute inset-0 h-full w-full brightness-95 grayscale contrast-125"
+            />
+          </div>
+        </>
+      )}
+
+      <FooterMarquee />
+
+      <InfoDrawer
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        onNavigateAbout={navigateToAbout}
+        onNavigateHome={navigateToHome}
+        onNavigateSocialMedia={navigateToSocialMedia}
+        onNavigateGallery={navigateToGallery}
+      />
+    </div>
+  );
+}
+
+export default App;

@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Anton", "Impact", "Arial Black", sans-serif;
+  --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+::selection {
+  background: #ccff00;
+  color: #000000;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #030014;
+  color: #ffffff;
+  font-family: var(--font-sans);
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff;
+  text-stroke: 1px #ffffff;
+}
+
+@media (min-width: 1024px) {
+  .outline-text {
+    -webkit-text-stroke: 2px #ffffff;
+    text-stroke: 2px #ffffff;
+  }
+}
+
+.hero-bg-base,
+.hero-bg-foreground {
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.hero-bg-animated {
+  animation: hero-bg-drift 8s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@media (max-width: 1024px) {
+  .hero-bg-base,
+  .hero-bg-foreground {
+    object-position: center 24%;
+  }
+}
+
+@media (orientation: portrait) {
+  .hero-bg-base,
+  .hero-bg-foreground {
+    object-position: center 18%;
+  }
+}
+
+@media (max-width: 640px) and (orientation: portrait) {
+  .hero-bg-base,
+  .hero-bg-foreground {
+    object-position: center 14%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-animated {
+    animation: none;
+  }
+}
+
+.footer-track {
+  animation: slide-marquee 22s linear infinite;
+}
+
+@keyframes hero-bg-drift {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.04) translate3d(0, -0.8%, 0);
+  }
+}
+
+@keyframes slide-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
