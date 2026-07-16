@@ -13,9 +13,9 @@ const timeline: TimelineEntry[] = [
   },
   {
     year: "2020 – 2021",
-    title: "Selected for the Swiss Snowboard National Team",
+    title: "Selected for Swiss Snowboard Talent Structures",
     description:
-      "Following consistently strong results at national level, Jonas is selected for the Swiss Snowboard National Team. The call-up confirms his exceptional talent and opens the door to international competition on the World Cup circuit."
+      "Following consistently strong results at national level, Jonas is selected for the Swiss Snowboard talent structures and development programs. The selection confirms his exceptional potential and provides him with access to elite coaching and international competition opportunities."
   },
   {
     year: "2021",
