@@ -27,13 +27,13 @@ const timeline: TimelineEntry[] = [
     year: "2022 – 2023",
     title: "Junior World Championships & Junior Athlete of the Year",
     description:
-      "Two podium finishes at the Junior World Championships in halfpipe make a clear statement. Shortly after, Jonas is named Junior Athlete of the Year 2023 by Swiss Snowboard – an honour that recognises his remarkable development."
+      "Two podium finishes at the Junior World Championships in halfpipe make a clear statement. Shortly after, Jonas is named Junior Athlete of the Year 2023 by Thurgau – an honour that recognises his remarkable development."
   },
   {
     year: "2023 – 2024",
     title: "World Cup Top-10 & Snow League",
     description:
-      "Jonas establishes himself on the World Cup circuit with more than five top-10 finishes across halfpipe, slopestyle and big air, proving his versatility. He also claims three podiums in the Snow League."
+      "Jonas establishes himself on the World Cup circuit with more than five top-10 finishes across halfpipe, slopestyle and big air, proving his versatility. He participates three times in the Snow League at elite level."
   },
   {
     year: "2026",
@@ -163,10 +163,10 @@ export function CareerPage() {
             {[
               { dt: "Olympics", dd: "1× Olympian" },
               { dt: "World Cup Top-10", dd: "5+ Finishes" },
-              { dt: "Snow League", dd: "3× Podium" },
+              { dt: "Snow League", dd: "3 Participations" },
               { dt: "Junior World Champs", dd: "2× Halfpipe Podium" },
               { dt: "European Cup U15", dd: "Overall Halfpipe Win" },
-              { dt: "Junior Athlete 2023", dd: "Swiss Snowboard Award" }
+              { dt: "Junior Athlete 2023", dd: "Thurgau Award" }
             ].map(({ dt, dd }) => (
               <div
                 key={dt}
