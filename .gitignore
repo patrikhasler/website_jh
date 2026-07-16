@@ -29,3 +29,11 @@ pnpm-debug.log*
 
 # Coverage
 coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# Backup-Dateien
+*_SAVE
+
+*.bak
