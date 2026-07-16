@@ -44,13 +44,11 @@ const timeline: TimelineEntry[] = [
 ];
 
 const sponsors = [
-  "Swiss Snowboard",
-  "Red Bull",
-  "Laax / Rocksresort",
   "Burton",
-  "Roxy",
-  "Anon",
-  "Vans"
+  "Laax",
+  "Oakley",
+  "TSG",
+  "Swiss Snowboard"
 ];
 
 export function CareerPage() {
