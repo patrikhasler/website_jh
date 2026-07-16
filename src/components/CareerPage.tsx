@@ -48,6 +48,7 @@ const sponsors = [
   "Laax",
   "Oakley",
   "TSG",
+  "Schweizer Sporthilfe",
   "Swiss Snowboard"
 ];
 
