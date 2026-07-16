@@ -37,9 +37,9 @@ const timeline: TimelineEntry[] = [
   },
   {
     year: "2026",
-    title: "Olympic Games",
+    title: "Olympic Games & National Team Promotion",
     description:
-      "The pinnacle of his career so far: Jonas Hasler qualifies for the Winter Olympic Games and represents Switzerland on the world's biggest stage in winter sport – a milestone built on years of hard work, sacrifice and passionate training."
+      "The pinnacle of his career so far: Jonas Hasler qualifies for the Winter Olympic Games and represents Switzerland on the world's biggest stage in winter sport. He is also promoted to the Swiss Snowboard National Team – a milestone built on years of hard work, sacrifice and passionate training."
   }
 ];
 
