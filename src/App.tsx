@@ -6,6 +6,7 @@ import { AboutPage } from "./components/AboutPage";
 import { SocialMediaPage } from "./components/SocialMediaPage";
 import { GalleryPage } from "./components/GalleryPage";
 import { CareerPage } from "./components/CareerPage";
+import { AutographPage } from "./components/AutographPage";
 import { InfoDrawer } from "./components/InfoDrawer";
 import { ParticleBackground } from "./components/ParticleBackground";
 import { ScrambleText } from "./components/ScrambleText";
@@ -58,6 +59,7 @@ function App() {
   const isSocialMediaPage = path === "/social-media";
   const isGalleryPage = path === "/gallery";
   const isCareerPage = path === "/career";
+  const isAutographPage = path === "/autograph";
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -117,6 +119,13 @@ function App() {
     }
   };
 
+  const navigateToAutograph = () => {
+    if (window.location.pathname !== "/autograph") {
+      window.history.pushState({}, "", "/autograph");
+      setPath("/autograph");
+    }
+  };
+
   useEffect(() => {
     const origin = "https://jonashasler.ch";
 
@@ -145,6 +154,11 @@ function App() {
         title: "Career | Jonas Hasler",
         description: "Career, achievements and timeline of Swiss snowboarder Jonas Hasler – Olympian, national team member and freestyle athlete.",
         canonicalPath: "/career"
+      },
+      "/autograph": {
+        title: "Autograph Card | Jonas Hasler",
+        description: "Request a free autograph card from Jonas Hasler – just send a stamped return envelope to Postfach 205, 7032 Laax, Switzerland.",
+        canonicalPath: "/autograph"
       }
     };
 
@@ -192,6 +206,8 @@ function App() {
         <GalleryPage />
       ) : isCareerPage ? (
         <CareerPage />
+      ) : isAutographPage ? (
+        <AutographPage />
       ) : (
         <>
           <main className="relative z-20 flex min-h-screen flex-1 items-center justify-center px-4 pb-32 pt-24 md:px-8 md:pt-28">
@@ -236,6 +252,7 @@ function App() {
         onNavigateSocialMedia={navigateToSocialMedia}
         onNavigateGallery={navigateToGallery}
         onNavigateCareer={navigateToCareer}
+        onNavigateAutograph={navigateToAutograph}
       />
     </div>
   );
