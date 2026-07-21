@@ -1,8 +1,8 @@
 const achievements = [
-  { value: "1x", label: "Olympia" },
+  { value: "1X", label: "Olympia" },
   { value: "5+", label: "Top 10 World Cup Finishes" },
-  { value: "3x", label: "Snow League" },
-  { value: "2x", label: "Junior World Championship Halfpipe Podiums" },
+  { value: "3X", label: "Snow League" },
+  { value: "2X", label: "Junior World Championship Halfpipe Podiums" },
   { value: "🏆", label: "European Cup Overall Halfpipe (U15)" },
   { value: "🏆", label: "Junior Athlete of the Year 2023" }
 ];
@@ -10,7 +10,7 @@ const achievements = [
 export function AboutPage() {
   return (
     <main className="relative z-20 flex min-h-screen items-center justify-center px-4 pb-28 pt-24 font-sans md:px-8 md:pt-28">
-      <section className="w-full max-w-[1400px] rounded-md border border-white/10 bg-[#3b3b3f]/85 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.45)] md:p-7">
+      <section className="w-full max-w-[1400px] rounded-md border border-white/10 bg-[#171a28]/72 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur-sm md:p-7">
         <div className="grid gap-5 md:grid-cols-[280px_1fr] md:gap-7">
           <div className="overflow-hidden rounded-md bg-black/35">
             <img

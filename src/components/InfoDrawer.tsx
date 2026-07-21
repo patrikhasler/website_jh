@@ -61,7 +61,7 @@ export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onN
           />
 
           <motion.aside
-            className="fixed right-0 top-0 z-50 h-screen w-full max-w-full border-l border-white/5 bg-[#333333] sm:max-w-xl md:max-w-2xl"
+            className="fixed right-0 top-0 z-50 h-screen w-full max-w-full border-l border-white/10 bg-[#171a28]/92 sm:max-w-xl md:max-w-2xl"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
@@ -70,7 +70,7 @@ export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onN
             aria-modal="true"
             aria-label="Info drawer"
           >
-            <div className="sticky top-0 flex items-center justify-between border-b border-white/10 bg-[#333333]/90 px-5 py-4 backdrop-blur-md">
+            <div className="sticky top-0 flex items-center justify-between border-b border-white/10 bg-[#121523]/92 px-5 py-4 backdrop-blur-md">
               {view === "menu" ? (
                 <button
                   type="button"
@@ -190,9 +190,9 @@ export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onN
                     <span className="mb-2 block font-mono text-xs tracking-[0.12em] text-white/70">PROJECT TYPE</span>
                     <select name="projectType" className="w-full border-0 border-b border-white/40 bg-transparent py-2 text-white outline-none transition focus:border-[#CCFF00]">
                       <option value="">Select project type</option>
-                      <option className="bg-[#333333]" value="campaign">Campaign collaboration</option>
-                      <option className="bg-[#333333]" value="sponsor">Sponsor activation</option>
-                      <option className="bg-[#333333]" value="editorial">Editorial production</option>
+                      <option className="bg-[#171a28]" value="campaign">Campaign collaboration</option>
+                      <option className="bg-[#171a28]" value="sponsor">Sponsor activation</option>
+                      <option className="bg-[#171a28]" value="editorial">Editorial production</option>
                     </select>
                   </label>
 

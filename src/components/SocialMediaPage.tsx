@@ -19,7 +19,7 @@ const comments = [
 export function SocialMediaPage() {
   return (
     <main className="relative z-20 flex min-h-screen items-center justify-center px-4 pb-28 pt-24 font-sans md:px-8 md:pt-28">
-      <section className="w-full max-w-[1400px] rounded-md border border-white/10 bg-[#34343a]/88 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.45)] md:p-7">
+      <section className="w-full max-w-[1400px] rounded-md border border-white/10 bg-[#171a28]/72 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur-sm md:p-7">
         <div className="grid gap-5 md:grid-cols-[500px_1fr] md:gap-8 lg:grid-cols-[620px_1fr]">
           <figure className="min-h-[480px] overflow-hidden rounded-md border border-white/10 bg-black/45 p-2 md:min-h-[640px] lg:min-h-[760px]">
             <img src="/assets/EMV.jpg" alt="Jonas Hasler social media portrait" className="h-full w-full object-contain object-center" />

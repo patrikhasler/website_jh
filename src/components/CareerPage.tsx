@@ -66,13 +66,45 @@ export function CareerPage() {
             Career
           </h1>
           <p className="mt-5 max-w-2xl font-sans text-base leading-relaxed text-white/65 md:text-lg">
-            Jonas Hasler was born on June 1, 2006 in Laax – one of the world's most iconic snowboard
-            destinations. What started as a childhood passion on the Laax glacier has grown into a
-            remarkable international career. At just 20 years old, Jonas is already one of Switzerland's
-            most versatile freestyle snowboarders, competing at the highest level in halfpipe, slopestyle
-            and big air simultaneously.
+            Born on June 1, 2006, Jonas Hasler grew up in Laax, one of the world's most iconic snowboard
+            destinations. What began as a childhood passion on the Laax glacier has developed into a
+            remarkable international career. At just 20 years old, Jonas is already Switzerland's
+            most versatile freestyle snowboarder, competing at the highest level in halfpipe, slopestyle,
+            and big air.
           </p>
         </header>
+
+        {/* ── Highlights grid ── */}
+        <section className="mb-16">
+          <h2 className="mb-8 font-display text-2xl uppercase tracking-[0.06em] text-[#CCFF00]">
+            Highlights at a Glance
+          </h2>
+
+          <dl className="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { value: "1", suffix: "X", label: "Olympics" },
+              { value: "5", suffix: "+", label: "Top 10 World Cup Finishes" },
+              { value: "3", suffix: "X", label: "Snow League Participations" },
+              { value: "2", suffix: "X", label: "Junior World Champ Podiums" },
+              { value: "U15", suffix: "", label: "European Cup Overall Title" },
+              { value: "2023", suffix: "", label: "Junior Athlete of the Year" }
+            ].map(({ value, suffix, label }) => (
+              <div
+                key={label}
+                className="border-l-[3px] border-l-[#CCFF00] pl-4"
+              >
+                <dd className="font-display text-6xl uppercase leading-none text-white">
+                  {value}
+                  {suffix === "X" ? <span className="ml-0.5 inline-block align-baseline text-[0.72em]">{suffix}</span> : null}
+                  {suffix === "+" ? <span className="ml-0.5 align-top text-[0.9em]">{suffix}</span> : null}
+                </dd>
+                <dt className="mt-2 max-w-[18ch] font-mono text-[11px] uppercase leading-tight tracking-[0.08em] text-white/45">
+                  {label}
+                </dt>
+              </div>
+            ))}
+          </dl>
+        </section>
 
         {/* ── Bio text block ── */}
         <section className="mb-16 grid gap-8 md:grid-cols-2 md:gap-12">
@@ -152,32 +184,6 @@ export function CareerPage() {
               </li>
             ))}
           </ol>
-        </section>
-
-        {/* ── Highlights grid ── */}
-        <section className="mb-16">
-          <h2 className="mb-8 font-display text-2xl uppercase tracking-[0.06em] text-[#CCFF00]">
-            Highlights at a Glance
-          </h2>
-
-          <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { dt: "Olympics", dd: "1× Olympian" },
-              { dt: "World Cup Top-10", dd: "5+ Finishes" },
-              { dt: "Snow League", dd: "3 Participations" },
-              { dt: "Junior World Champs", dd: "2× Halfpipe Podium" },
-              { dt: "European Cup U15", dd: "Overall Halfpipe Win" },
-              { dt: "Junior Athlete 2023", dd: "Thurgau Award" }
-            ].map(({ dt, dd }) => (
-              <div
-                key={dt}
-                className="rounded-md border border-white/10 bg-white/[0.04] p-4"
-              >
-                <dt className="mb-1 font-mono text-[11px] uppercase tracking-[0.14em] text-white/45">{dt}</dt>
-                <dd className="font-display text-2xl uppercase text-white">{dd}</dd>
-              </div>
-            ))}
-          </dl>
         </section>
 
         {/* ── Partners & Sponsors ── */}

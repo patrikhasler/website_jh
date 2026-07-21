@@ -1,7 +1,7 @@
 export function AutographPage() {
   return (
     <main className="relative z-20 flex min-h-screen items-center justify-center px-4 pb-28 pt-24 font-sans md:px-8 md:pt-28">
-      <section className="w-full max-w-[900px] rounded-md border border-white/10 bg-[#3b3b3f]/85 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.45)] md:p-7">
+      <section className="w-full max-w-[900px] rounded-md border border-white/10 bg-[#171a28]/72 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur-sm md:p-7">
 
         <div className="grid gap-8 md:grid-cols-[1fr_300px] md:gap-10">
 
