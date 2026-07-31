@@ -5,7 +5,8 @@ export function FooterMarquee() {
     { src: "/assets/logo-tsg.png", alt: "TSG", href: "http://www.ridetsg.com" },
     { src: "/assets/logo-laax.png", alt: "LAAX", href: "http://www.laax.com" },
     { src: "/assets/logo-schweizersporthilfe.png", alt: "Schweizer Sporthilfe", href: "https://sporthilfe.ch" },
-    { src: "/assets/logo-swisssnowboard.png", alt: "Swiss Snowboard", href: "https://www.swiss-ski.ch/snowboard/" }
+    { src: "/assets/logo-swisssnowboard.png", alt: "Swiss Snowboard", href: "https://www.swiss-ski.ch/snowboard/" },
+    { src: "/assets/logo-spitzensport-schweizer-armee.png", alt: "Spitzensport Schweizer Armee", href: "https://sinafrei.ch/spitzensport-schweizer-armee/", footerLabel: "Spitzensport Schweizer Armee" }
   ];
 
   return (
@@ -22,11 +23,22 @@ export function FooterMarquee() {
                   aria-label={`${sponsor.alt} website`}
                   className="pointer-events-auto"
                 >
-                  <img
-                    src={sponsor.src}
-                    alt={sponsor.alt}
-                    className="h-4 w-auto max-w-[112px] object-contain opacity-40 grayscale contrast-125 transition hover:opacity-80 md:h-[1.4rem] md:max-w-[152px]"
-                  />
+                  {sponsor.footerLabel ? (
+                    <span className="flex items-center gap-2 opacity-40 grayscale contrast-125 transition hover:opacity-80">
+                      <span className="block h-4 w-4 overflow-hidden md:h-[1.4rem] md:w-[1.4rem]">
+                        <img src={sponsor.src} alt="" className="h-full w-auto max-w-none object-contain object-left" />
+                      </span>
+                      <span className="whitespace-nowrap font-mono text-[8px] uppercase tracking-[0.06em] text-white md:text-[10px]">
+                        {sponsor.footerLabel}
+                      </span>
+                    </span>
+                  ) : (
+                    <img
+                      src={sponsor.src}
+                      alt={sponsor.alt}
+                      className="h-4 w-auto max-w-[112px] object-contain opacity-40 grayscale contrast-125 transition hover:opacity-80 md:h-[1.4rem] md:max-w-[152px]"
+                    />
+                  )}
                 </a>
               </li>
             ))}

@@ -125,24 +125,28 @@ export function CareerPage() {
               The Athlete
             </h2>
             <div className="space-y-4 font-sans text-[0.95rem] leading-relaxed text-white/70">
-              <p>
-                Jonas Hasler is a member of the Swiss Snowboard National Team and one of the
-                most exciting young talents in international freestyle snowboarding. He combines
-                technical precision with creative style – a blend that makes him a genuine
-                threat across all three disciplines.
+              <p className="font-mono text-xs uppercase tracking-[0.1em] text-white/90">
+                Swiss Snowboard National Team Athlete
               </p>
               <p>
-                Growing up at the foot of Crap Sogn Gion in Laax, Jonas treats the glacier as a
-                second home, using every training session to push his tricks higher and his style
-                sharper. His halfpipe riding is known for amplitude and clean grab positions;
-                in slopestyle and big air he impresses with creative variations and consistent
-                landings.
+                Jonas Hasler is one of international freestyle snowboarding's most exciting young
+                talents. Growing up riding the slopes of LAAX, Switzerland, he seamlessly blends
+                technical precision with creative style across Halfpipe, Slopestyle, and Big Air.
               </p>
               <p>
-                Off the snow, Jonas is passionate about videography, drone flying and aviation –
-                interests that shape his creative eye for the sport and help him build his own
-                visual identity as an athlete.
+                Known for massive amplitude, rock solid landings and inventive trick variations,
+                Jonas continually pushes the limits on the mountain. Off the snow, his passion for
+                videography, drone piloting and aviation fuels his creative approach to the sport,
+                shaping a distinct visual identity both on and off the board.
               </p>
+              <div className="pt-2">
+                <h3 className="font-display text-xl uppercase tracking-[0.05em] text-white">Quick Stats</h3>
+                <ul className="mt-3 space-y-2">
+                  <li className="flex gap-2"><span className="text-[#CCFF00]" aria-hidden="true">•</span><span><strong className="font-semibold text-white/90">Home Mountain:</strong> LAAX (Crap Sogn Gion)</span></li>
+                  <li className="flex gap-2"><span className="text-[#CCFF00]" aria-hidden="true">•</span><span><strong className="font-semibold text-white/90">Disciplines:</strong> Halfpipe | Slopestyle | Big Air</span></li>
+                  <li className="flex gap-2"><span className="text-[#CCFF00]" aria-hidden="true">•</span><span><strong className="font-semibold text-white/90">Passions:</strong> Freestyle Snowboarding, Videography, Aviation</span></li>
+                </ul>
+              </div>
             </div>
           </div>
 
