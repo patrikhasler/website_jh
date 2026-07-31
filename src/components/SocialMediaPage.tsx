@@ -60,7 +60,7 @@ export function SocialMediaPage() {
           <h2 id="trusted-partners-title" className="font-display text-3xl uppercase tracking-[0.04em] text-[#CCFF00]">
             Trusted Partners
           </h2>
-          <ul className="mt-6 grid min-w-[760px] grid-cols-7 gap-x-6 overflow-x-auto pb-2">
+          <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:grid-cols-7">
             {trustedPartners.map((partner) => (
               <li key={partner.name} className="flex min-h-20 items-center justify-center">
                 <a
