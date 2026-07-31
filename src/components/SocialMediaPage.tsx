@@ -60,17 +60,21 @@ export function SocialMediaPage() {
           <h2 id="trusted-partners-title" className="font-display text-3xl uppercase tracking-[0.04em] text-[#CCFF00]">
             Trusted Partners
           </h2>
-          <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          <ul className="mt-6 grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
             {trustedPartners.map((partner) => (
-              <li key={partner.name}>
+              <li key={partner.name} className="flex min-h-20 items-center justify-center">
                 <a
                   href={partner.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${partner.name} website`}
-                  className="flex h-28 items-center justify-center rounded-md border border-white/15 bg-white p-4 transition hover:border-[#CCFF00] hover:shadow-[0_0_24px_rgba(204,255,0,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#CCFF00]"
+                  className="flex h-20 w-full items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#CCFF00]"
                 >
-                  <img src={partner.logo} alt={partner.name} className="max-h-16 max-w-full object-contain" />
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-h-12 max-w-[180px] object-contain opacity-40 grayscale invert contrast-125 mix-blend-screen transition hover:opacity-80"
+                  />
                 </a>
               </li>
             ))}
