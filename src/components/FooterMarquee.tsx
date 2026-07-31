@@ -6,7 +6,7 @@ export function FooterMarquee() {
     { src: "/assets/logo-laax.png", alt: "LAAX", href: "http://www.laax.com" },
     { src: "/assets/logo-schweizersporthilfe.png", alt: "Schweizer Sporthilfe", href: "https://sporthilfe.ch" },
     { src: "/assets/logo-swisssnowboard.png", alt: "Swiss Snowboard", href: "https://www.swiss-ski.ch/snowboard/" },
-    { src: "/assets/logo-spitzensport-schweizer-armee.png", alt: "Spitzensport Schweizer Armee", href: "https://sinafrei.ch/spitzensport-schweizer-armee/", footerLabel: "Spitzensport Schweizer Armee" }
+    { src: "/assets/logo-spitzensport-schweizer-armee.png", alt: "Spitzensport Schweizer Armee", href: "https://www.armee.ch/de", footerLabel: "Spitzensport Schweizer Armee" }
   ];
 
   return (
