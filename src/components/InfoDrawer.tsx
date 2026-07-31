@@ -106,8 +106,8 @@ export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onN
                   {[
                     "HOME",
                     "ABOUT",
-                    "WHY",
                     "SOCIAL MEDIA",
+                    "WHY",
                     "CAREER",
                     "GALLERY",
                     "AUTOGRAPH CARD",
