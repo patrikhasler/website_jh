@@ -104,11 +104,11 @@ export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onN
                 <div className="space-y-3">
                   {[
                     "HOME",
+                    "ABOUT",
                     "SOCIAL MEDIA",
-                    "GALLERY",
                     "CAREER",
+                    "GALLERY",
                     "AUTOGRAPH CARD",
-                    "ABOUT"
                   ].map((item) => (
                     <button
                       type="button"

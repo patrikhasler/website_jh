@@ -1,18 +1,24 @@
-const comments = [
+const socialImpact = [
+  "$4.0M Earned Media Value",
+  "Ranked #2 globally during the Olympic Games",
+  "48k Instagram",
+  "98k TikTok",
+  "75+ million Olympic views",
+  "“Tiramisu Man” viral Olympic story",
+  "Audience far beyond core snowboard fans"
+];
+
+const trustedPartners = [
+  { name: "Zalando", logo: "/assets/partners/zalando.svg", href: "https://www.zalando.ch/" },
+  { name: "Migros", logo: "/assets/partners/migros.png", href: "https://www.migros.ch/" },
+  { name: "EF Education First", logo: "/assets/partners/ef.png", href: "https://www.efswiss.ch/" },
+  { name: "Mentos", logo: "/assets/partners/mentos.svg", href: "https://www.mentos.ch/" },
+  { name: "Stiftung Integral", logo: "/assets/partners/stiftung-integral.png", href: "https://integral.swiss/" },
+  { name: "Betty Bossi", logo: "/assets/partners/betty-bossi.jpg", href: "https://www.bettybossi.ch/" },
   {
-    platform: "Instagram",
-    handle: "@j0.nash",
-    text: "Strong style and clean execution. This run had full control from takeoff to landing."
-  },
-  {
-    platform: "TikTok",
-    handle: "@jonas.hasler",
-    text: "Behind the scenes from training days in Laax. More clips, more progression, more consistency."
-  },
-  {
-    platform: "Community",
-    handle: "@fans",
-    text: "Your creativity on feature lines is next level. Keep pushing the sport forward."
+    name: "Blutstammzellenspende Schweizerisches Rotes Kreuz",
+    logo: "/assets/partners/blutspende-srk.svg",
+    href: "https://www.blutstammzellspende.ch/"
   }
 ];
 
@@ -30,20 +36,46 @@ export function SocialMediaPage() {
             <p className="mt-2 font-mono text-xs uppercase tracking-[0.09em] text-white/70 md:text-sm">Instagram @j0.nash / TikTok @jonas.hasler</p>
 
             <p className="mt-4 max-w-[70ch] text-sm leading-relaxed text-white/85 md:text-base">
-              Daily updates, competition moments and training highlights. This page collects social content context and quick comments for media partners and fans.
+              Daily updates, competition moments and training highlights. Explore the reach and impact Jonas creates across social media and beyond the snowboard community.
             </p>
 
-            <div className="mt-6 grid gap-4">
-              {comments.map((item) => (
-                <article key={`${item.platform}-${item.handle}`} className="rounded-md border border-white/15 bg-[#2d2d33]/80 p-4">
-                  <p className="font-display text-2xl leading-none text-[#CCFF00]">{item.platform}</p>
-                  <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.08em] text-white/65">{item.handle}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-white/85">{item.text}</p>
-                </article>
-              ))}
-            </div>
+            <section className="mt-6 rounded-md border border-white/15 bg-[#2d2d33]/80 p-5" aria-labelledby="social-impact-title">
+              <h2 id="social-impact-title" className="font-display text-3xl uppercase tracking-[0.04em] text-[#CCFF00]">
+                Social Impact
+              </h2>
+              <ul className="mt-4 grid gap-3">
+                {socialImpact.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-white/85 md:text-base">
+                    <span className="text-[#CCFF00]" aria-hidden="true">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
           </div>
         </div>
+
+        <section className="mt-8 border-t border-white/15 pt-7" aria-labelledby="trusted-partners-title">
+          <h2 id="trusted-partners-title" className="font-display text-3xl uppercase tracking-[0.04em] text-[#CCFF00]">
+            Trusted Partners
+          </h2>
+          <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            {trustedPartners.map((partner) => (
+              <li key={partner.name}>
+                <a
+                  href={partner.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${partner.name} website`}
+                  className="flex h-28 items-center justify-center rounded-md border border-white/15 bg-white p-4 transition hover:border-[#CCFF00] hover:shadow-[0_0_24px_rgba(204,255,0,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#CCFF00]"
+                >
+                  <img src={partner.logo} alt={partner.name} className="max-h-16 max-w-full object-contain" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
       </section>
     </main>
   );

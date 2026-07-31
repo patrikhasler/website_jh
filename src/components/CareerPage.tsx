@@ -2,32 +2,26 @@ type TimelineEntry = {
   year: string;
   title: string;
   description: string;
+  highlights?: string[];
 };
 
 const timeline: TimelineEntry[] = [
   {
-    year: "2017 – 2019",
-    title: "The First Steps",
-    description:
-      "Jonas begins structured snowboard training at Caumasee and on the Laax glacier. His talent for halfpipe riding becomes evident early on. Training with Skiclub Flims lays the foundation for an international career."
-  },
-  {
-    year: "2020 – 2021",
-    title: "Selected for Swiss Snowboard Talent Structures",
-    description:
-      "Following consistently strong results at national level, Jonas is selected for the Swiss Snowboard talent structures and development programs. The selection confirms his exceptional potential and provides him with access to elite coaching and international competition opportunities."
-  },
-  {
-    year: "2021",
-    title: "European Cup Overall Halfpipe – U15 Winner",
-    description:
-      "Jonas crowns his first major international season with the overall victory in the European Cup U15 category. The title underlines his dominant performance in the halfpipe and puts him on the radar of the global snowboard community."
-  },
-  {
-    year: "2022 – 2023",
-    title: "Junior World Championships & Junior Athlete of the Year",
-    description:
-      "Two podium finishes at the Junior World Championships in halfpipe make a clear statement. Shortly after, Jonas is named Junior Athlete of the Year 2023 by Thurgau – an honour that recognises his remarkable development."
+    year: "2025/26",
+    title: "Season Highlights",
+    description: "A landmark season across all three freestyle snowboard disciplines.",
+    highlights: [
+      "Olympic Athlete Milano Cortina 2026",
+      "Only snowboard athlete competing in Halfpipe, Slopestyle & Big Air",
+      "World Cup Overall #10 Halfpipe",
+      "World Cup Overall #10 Slopestyle",
+      "World Cup Overall #10 Park & Pipe",
+      "2 × 4th Place Halfpipe World Cup",
+      "6th Place Slopestyle LAAX",
+      "First European to land a Triple Cork in a Halfpipe",
+      "Full Season Invite Snow League",
+      "Only athlete selected for the Swiss Snowboard National Team in Slopestyle (2026/27)"
+    ]
   },
   {
     year: "2023 – 2024",
@@ -36,10 +30,28 @@ const timeline: TimelineEntry[] = [
       "Jonas establishes himself on the World Cup circuit with more than five top-10 finishes across halfpipe, slopestyle and big air, proving his versatility. He participates three times in the Snow League at elite level."
   },
   {
-    year: "2026",
-    title: "Olympic Games & National Team Promotion",
+    year: "2022 – 2023",
+    title: "Junior World Championships & Junior Athlete of the Year",
     description:
-      "The pinnacle of his career so far: Jonas Hasler qualifies for the Winter Olympic Games and represents Switzerland on the world's biggest stage in winter sport. He is also promoted to the Swiss Snowboard National Team – a milestone built on years of hard work, sacrifice and passionate training."
+      "Two podium finishes at the Junior World Championships in halfpipe make a clear statement. Shortly after, Jonas is named Junior Athlete of the Year 2023 by Thurgau – an honour that recognises his remarkable development."
+  },
+  {
+    year: "2021",
+    title: "European Cup Overall Halfpipe – U15 Winner",
+    description:
+      "Jonas crowns his first major international season with the overall victory in the European Cup U15 category. The title underlines his dominant performance in the halfpipe and puts him on the radar of the global snowboard community."
+  },
+  {
+    year: "2020 – 2021",
+    title: "Selected for Swiss Snowboard Talent Structures",
+    description:
+      "Following consistently strong results at national level, Jonas is selected for the Swiss Snowboard talent structures and development programs. The selection confirms his exceptional potential and provides him with access to elite coaching and international competition opportunities."
+  },
+  {
+    year: "2017 – 2019",
+    title: "The First Steps",
+    description:
+      "Jonas begins structured snowboard training at Caumasee and on the Laax glacier. His talent for halfpipe riding becomes evident early on. Training with Skiclub Flims lays the foundation for an international career."
   }
 ];
 
@@ -181,6 +193,16 @@ export function CareerPage() {
                 <p className="font-sans text-[0.9rem] leading-relaxed text-white/60">
                   {entry.description}
                 </p>
+                {entry.highlights ? (
+                  <ul className="mt-4 grid gap-2 sm:grid-cols-2 sm:gap-x-8">
+                    {entry.highlights.map((highlight) => (
+                      <li key={highlight} className="flex gap-2 font-sans text-[0.9rem] leading-relaxed text-white/80">
+                        <span className="text-[#CCFF00]" aria-hidden="true">•</span>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </li>
             ))}
           </ol>
