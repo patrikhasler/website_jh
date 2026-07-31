@@ -44,8 +44,8 @@ export function SocialMediaPage() {
                 Social Impact
               </h2>
               <ul className="mt-4 grid gap-3">
-                {socialImpact.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-white/85 md:text-base">
+                {socialImpact.map((item, index) => (
+                  <li key={item} className={`flex gap-3 text-sm leading-relaxed text-white/85 md:text-base ${index < 2 ? "font-bold" : ""}`}>
                     <span className="text-[#CCFF00]" aria-hidden="true">•</span>
                     <span>{item}</span>
                   </li>

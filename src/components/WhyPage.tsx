@@ -85,7 +85,14 @@ export function WhyPage() {
                 {pillar.title}
               </h2>
               <div className="space-y-5 text-base leading-relaxed text-white/70 md:text-lg">
-                {pillar.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                {pillar.paragraphs.map((paragraph, paragraphIndex) => (
+                  <p
+                    key={paragraph}
+                    className={pillar.title === "Connection." && paragraphIndex === 2 ? "font-semibold text-white/90" : ""}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </section>
           ))}
