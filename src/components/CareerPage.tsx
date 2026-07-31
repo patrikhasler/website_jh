@@ -67,7 +67,8 @@ const sponsors = [
   "Oakley",
   "TSG",
   "Schweizer Sporthilfe",
-  "Swiss Snowboard"
+  "Swiss Snowboard",
+  "Armee Suisse"
 ];
 
 export function CareerPage() {
