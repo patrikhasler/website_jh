@@ -49,9 +49,15 @@ const timeline: TimelineEntry[] = [
   },
   {
     year: "2017 – 2019",
-    title: "The First Steps",
+    title: "Early Titles & International Breakthrough",
     description:
-      "Jonas begins structured snowboard training at Caumasee and on the Laax glacier. His talent for halfpipe riding becomes evident early on. Training with Skiclub Flims lays the foundation for an international career."
+      "Training at the Swiss Olympic Sport School and riding in LAAX laid the foundation for Jonas' rise from dominant Swiss junior champion to international podium contender.",
+    highlights: [
+      "Swiss Champion Halfpipe & Slopestyle U13 – national titles five and six in a row",
+      "4th at the Burton US Open Junior Jam Halfpipe – best European rider",
+      "3rd at the World Rookie Tour Finals Halfpipe U15",
+      "2019 Freude herrscht Award – Best Swiss Junior Athlete"
+    ]
   }
 ];
 
