@@ -7,6 +7,7 @@ import { SocialMediaPage } from "./components/SocialMediaPage";
 import { GalleryPage } from "./components/GalleryPage";
 import { CareerPage } from "./components/CareerPage";
 import { AutographPage } from "./components/AutographPage";
+import { WhyPage } from "./components/WhyPage";
 import { InfoDrawer } from "./components/InfoDrawer";
 import { ParticleBackground } from "./components/ParticleBackground";
 import { ScrambleText } from "./components/ScrambleText";
@@ -60,6 +61,7 @@ function App() {
   const isGalleryPage = path === "/gallery";
   const isCareerPage = path === "/career";
   const isAutographPage = path === "/autograph";
+  const isWhyPage = path === "/why";
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -126,6 +128,13 @@ function App() {
     }
   };
 
+  const navigateToWhy = () => {
+    if (window.location.pathname !== "/why") {
+      window.history.pushState({}, "", "/why");
+      setPath("/why");
+    }
+  };
+
   useEffect(() => {
     const origin = "https://jonashasler.ch";
 
@@ -159,6 +168,11 @@ function App() {
         title: "Autograph Card | Jonas Hasler",
         description: "Request a free autograph card from Jonas Hasler – just send a stamped return envelope to Postfach 205, 7032 Laax, Switzerland.",
         canonicalPath: "/autograph"
+      },
+      "/why": {
+        title: "Why Jonas Is Different | Jonas Hasler",
+        description: "Discover what sets Jonas Hasler apart through style, progression, stoke, authentic connection and elite performance across snowboard disciplines.",
+        canonicalPath: "/why"
       }
     };
 
@@ -208,6 +222,8 @@ function App() {
         <CareerPage />
       ) : isAutographPage ? (
         <AutographPage />
+      ) : isWhyPage ? (
+        <WhyPage />
       ) : (
         <>
           <main className="relative z-20 flex min-h-screen flex-1 items-center justify-center px-4 pb-32 pt-24 md:px-8 md:pt-28">
@@ -253,6 +269,7 @@ function App() {
         onNavigateGallery={navigateToGallery}
         onNavigateCareer={navigateToCareer}
         onNavigateAutograph={navigateToAutograph}
+        onNavigateWhy={navigateToWhy}
       />
     </div>
   );
