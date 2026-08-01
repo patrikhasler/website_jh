@@ -86,7 +86,7 @@ export function CareerPage() {
           </h1>
           <p className="mt-5 max-w-2xl font-sans text-base leading-relaxed text-white/65 md:text-lg">
             Born on June 1, 2006, Jonas Hasler grew up in Laax, one of the world's most iconic snowboard
-            destinations. What began as a childhood passion on the Laax glacier has developed into a
+            destinations. What began as a childhood passion in the famous P60 park has developed into a
             remarkable international career. At just 20 years old, Jonas is already Switzerland's
             most versatile freestyle snowboarder, competing at the highest level in halfpipe, slopestyle,
             and big air.
