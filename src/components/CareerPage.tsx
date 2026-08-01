@@ -54,7 +54,7 @@ const timeline: TimelineEntry[] = [
       "Training at the Swiss Olympic Sport School and riding in LAAX laid the foundation for Jonas' rise from dominant Swiss junior champion to international podium contender.",
     highlights: [
       "Swiss Champion Halfpipe & Slopestyle U13 – national titles five and six in a row",
-      "4th at the Burton US Open Junior Jam Halfpipe – best European rider",
+      "2nd at the Burton US Open Junior Jam Halfpipe – best European rider",
       "3rd at the World Rookie Tour Finals Halfpipe U15",
       "2019 Freude herrscht Award – Best Swiss Junior Athlete"
     ]
@@ -146,39 +146,18 @@ export function CareerPage() {
                 videography, drone piloting and aviation fuels his creative approach to the sport,
                 shaping a distinct visual identity both on and off the board.
               </p>
-              <div className="pt-2">
-                <h3 className="font-display text-xl uppercase tracking-[0.05em] text-white">Quick Stats</h3>
-                <ul className="mt-3 space-y-2">
-                  <li className="flex gap-2"><span className="text-[#CCFF00]" aria-hidden="true">•</span><span><strong className="font-semibold text-white/90">Home Mountain:</strong> LAAX (Crap Sogn Gion)</span></li>
-                  <li className="flex gap-2"><span className="text-[#CCFF00]" aria-hidden="true">•</span><span><strong className="font-semibold text-white/90">Disciplines:</strong> Halfpipe | Slopestyle | Big Air</span></li>
-                  <li className="flex gap-2"><span className="text-[#CCFF00]" aria-hidden="true">•</span><span><strong className="font-semibold text-white/90">Passions:</strong> Freestyle Snowboarding, Videography, Aviation</span></li>
-                </ul>
-              </div>
             </div>
           </div>
 
           <div>
             <h2 className="mb-4 font-display text-2xl uppercase tracking-[0.06em] text-[#CCFF00]">
-              Disciplines &amp; Style
+              Quick Stats
             </h2>
-            <div className="space-y-4 font-sans text-[0.95rem] leading-relaxed text-white/70">
-              <p>
-                <strong className="font-semibold text-white">Halfpipe</strong> is Jonas'
-                core discipline. In the pipe he dominates with controlled rotations, sharp
-                edge work and a pipe awareness rare for his age. He has repeatedly proven
-                at World Cup level that he can compete with the best riders in the world.
-              </p>
-              <p>
-                In <strong className="font-semibold text-white">Slopestyle</strong> he stands
-                out through line selection and flow – linking jib features seamlessly into
-                jumps to create a cohesive run that impresses both technically and visually.
-              </p>
-              <p>
-                In <strong className="font-semibold text-white">Big Air</strong> Jonas makes
-                full use of his hang time and height. Large rotations with clean grabs make
-                him a competitive force that judges and rivals alike respect.
-              </p>
-            </div>
+            <ul className="space-y-4 font-sans text-[0.95rem] leading-relaxed text-white/70">
+              <li className="border-l-2 border-[#CCFF00] pl-4"><strong className="block font-mono text-xs uppercase tracking-[0.08em] text-white/90">Home Mountain</strong><span className="mt-1 block">LAAX (Crap Sogn Gion)</span></li>
+              <li className="border-l-2 border-[#CCFF00] pl-4"><strong className="block font-mono text-xs uppercase tracking-[0.08em] text-white/90">Disciplines</strong><span className="mt-1 block">Halfpipe | Slopestyle | Big Air</span></li>
+              <li className="border-l-2 border-[#CCFF00] pl-4"><strong className="block font-mono text-xs uppercase tracking-[0.08em] text-white/90">Passions</strong><span className="mt-1 block">Freestyle Snowboarding, Videography, Aviation</span></li>
+            </ul>
           </div>
         </section>
 
