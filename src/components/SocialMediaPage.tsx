@@ -35,7 +35,7 @@ export function SocialMediaPage() {
           <figure className="min-h-[480px] overflow-hidden rounded-md border border-white/10 bg-black/45 p-2 md:min-h-[640px] lg:min-h-[760px]">
             <picture>
               <source srcSet="/assets/EMV-social.avif" type="image/avif" />
-              <img src="/assets/EMV.jpg" alt="Jonas Hasler social media portrait" width="1400" height="1897" className="h-full w-full object-contain object-center" />
+              <img src="/assets/EMV.jpg" alt="Social media portrait of snowboard athlete Jonas Hasler" width="1400" height="1897" className="h-full w-full object-contain object-center" />
             </picture>
           </figure>
 
@@ -80,7 +80,7 @@ export function SocialMediaPage() {
                 >
                   <img
                     src={partner.logo}
-                    alt={partner.name}
+                    alt={`${partner.name} partner logo for snowboard athlete Jonas Hasler`}
                     className={`max-h-[29px] max-w-[108px] object-contain opacity-40 grayscale contrast-125 mix-blend-screen transition hover:opacity-80 ${partner.preserveLightLogo ? "" : "invert"}`}
                   />
                 </a>

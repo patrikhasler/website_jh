@@ -15,6 +15,7 @@ export function FooterMarquee() {
         {[0, 1].map((row) => (
           <ul
             key={row}
+            aria-hidden={row === 1 ? "true" : undefined}
             className="flex min-w-screen shrink-0 items-center justify-around gap-8 px-[1.2rem] md:gap-[2.8rem] md:px-[1.6rem]"
           >
             {sponsors.map((sponsor) => (
@@ -29,7 +30,7 @@ export function FooterMarquee() {
                   {sponsor.footerLabel ? (
                     <span className="flex items-center gap-2 opacity-40 grayscale contrast-125 transition hover:opacity-80">
                       <span className="block h-4 w-4 overflow-hidden md:h-[1.4rem] md:w-[1.4rem]">
-                        <img src={sponsor.src} alt="" className="h-full w-auto max-w-none object-contain object-left" />
+                        <img src={sponsor.src} alt={`${sponsor.alt} partner logo for snowboard athlete Jonas Hasler`} className="h-full w-auto max-w-none object-contain object-left" />
                       </span>
                       <span className="whitespace-nowrap font-mono text-[8px] uppercase tracking-[0.06em] text-white md:text-[10px]">
                         {sponsor.footerLabel}
@@ -38,7 +39,7 @@ export function FooterMarquee() {
                   ) : (
                     <img
                       src={sponsor.src}
-                      alt={sponsor.alt}
+                      alt={`${sponsor.alt} sponsor logo for snowboard athlete Jonas Hasler`}
                       className="h-4 w-auto max-w-[112px] object-contain opacity-40 grayscale contrast-125 transition hover:opacity-80 md:h-[1.4rem] md:max-w-[152px]"
                     />
                   )}

@@ -17,7 +17,7 @@ export function AboutPage() {
               <source srcSet="/assets/1-about.avif" type="image/avif" />
               <img
                 src="/assets/1.jpg"
-                alt="Jonas Hasler portrait"
+                alt="Portrait of Swiss professional snowboard athlete Jonas Hasler"
                 width="1000"
                 height="1499"
                 className="h-full w-full object-cover object-center"

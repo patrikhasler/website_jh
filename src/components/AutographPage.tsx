@@ -24,9 +24,9 @@ export function AutographPage() {
             {/* ── Instructions ── */}
             <div className="mt-8 space-y-5">
               <div>
-                <h3 className="mb-2 font-display text-lg uppercase tracking-[0.04em] text-[#CCFF00]">
+                <h2 className="mb-2 font-display text-lg uppercase tracking-[0.04em] text-[#CCFF00]">
                   How it works
-                </h3>
+                </h2>
                 <ol className="space-y-3 font-sans text-[0.95rem] leading-relaxed text-white/65">
                   <li className="flex gap-3">
                     <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#CCFF00] text-[11px] font-bold text-black">1</span>

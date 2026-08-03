@@ -28,8 +28,8 @@ export type SeoData = {
 
 export const SEO_BY_PATH: Record<string, SeoData> = {
   "/": {
-    title: "Jonas Hasler | Professional Snowboarder",
-    description: "Official website of Jonas Hasler, professional snowboarder, olympian and Swiss national team member in halfpipe, slopestyle and big air.",
+    title: "Jonas Hasler | Official Website & Swiss Snowboard Athlete",
+    description: "Offizielle Website von Jonas Hasler. News, Wettbewerbe, Halfpipe & Slopestyle Highlights sowie Sponsoring-Informationen.",
     canonicalPath: "/"
   },
   "/about": {
@@ -276,7 +276,8 @@ function App({ initialPath }: AppProps) {
               <source srcSet="/assets/14-hero.avif" type="image/avif" />
               <img
                 src="/assets/14.jpg"
-                alt=""
+                alt="Jonas Hasler snowboarding in a freestyle action sequence"
+                aria-hidden="true"
                 width="2400"
                 height="1600"
                 className="hero-bg-base h-full w-full brightness-[0.55] grayscale contrast-125"
@@ -286,7 +287,7 @@ function App({ initialPath }: AppProps) {
               <source srcSet="/assets/14-hero.avif" type="image/avif" />
               <img
                 src="/assets/14.jpg"
-                alt="Jonas Hasler snowboard action shot"
+                alt="Jonas Hasler performing a freestyle snowboard trick"
                 width="2400"
                 height="1600"
                 fetchPriority="high"

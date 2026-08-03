@@ -11,7 +11,7 @@ export function MediaPage() {
             <source srcSet="/assets/IMG_9937-media.avif" type="image/avif" />
             <img
               src="/assets/IMG_9937.jpeg"
-              alt="Jonas Hasler at The Snow League"
+              alt="Snowboard athlete Jonas Hasler at The Snow League"
               width="1600"
               height="1066"
               className="h-full w-full object-cover object-[72%_center] grayscale"

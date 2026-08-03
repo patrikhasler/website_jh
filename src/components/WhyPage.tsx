@@ -58,7 +58,7 @@ export function WhyPage() {
               <source srcSet="/assets/15-why.avif" type="image/avif" />
               <img
                 src="/assets/15.jpeg"
-                alt="Jonas Hasler performing a snowboard trick"
+                alt="Jonas Hasler performing a freestyle snowboard trick above the halfpipe"
                 width="1600"
                 height="1067"
                 className="h-full w-full object-cover grayscale contrast-125"

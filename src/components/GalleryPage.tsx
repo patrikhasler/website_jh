@@ -1,20 +1,20 @@
 const galleryImages = [
-  "/assets/2.jpeg",
-  "/assets/3.jpeg",
-  "/assets/4.jpeg",
-  "/assets/5.jpeg",
-  "/assets/6.jpeg",
-  "/assets/7.jpeg",
-  "/assets/12.jpeg",
-  "/assets/556b9f89-2447-4df3-ba53-783f46d98d7d.jpeg",
-  "/assets/DSC02431.jpeg",
-  "/assets/IMG_0282.jpeg",
-  "/assets/IMG_3911.jpeg",
-  "/assets/IMG_3917.jpeg",
-  "/assets/IMG_8595.jpeg",
-  "/assets/IMG_9724.jpeg",
-  "/assets/IMG_9807.jpeg",
-  "/assets/IMG_9937.jpeg"
+  { src: "/assets/2.jpeg", alt: "Jonas Hasler performing a handplant on a snowboard halfpipe wall" },
+  { src: "/assets/3.jpeg", alt: "Jonas Hasler grabbing his snowboard high above a mountain halfpipe" },
+  { src: "/assets/4.jpeg", alt: "Jonas Hasler performing an inverted snowboard aerial against a blue sky" },
+  { src: "/assets/5.jpeg", alt: "Jonas Hasler rotating above the snowboard halfpipe with his red Burton board" },
+  { src: "/assets/6.jpeg", alt: "Jonas Hasler launching a snowboard trick above the clouds in Laax" },
+  { src: "/assets/7.jpeg", alt: "Jonas Hasler holding a snowboard grab during a halfpipe run" },
+  { src: "/assets/12.jpeg", alt: "Jonas Hasler performing an inverted snowboard trick in the halfpipe" },
+  { src: "/assets/556b9f89-2447-4df3-ba53-783f46d98d7d.jpeg", alt: "Jonas Hasler sliding a snowboard rail in the terrain park" },
+  { src: "/assets/DSC02431.jpeg", alt: "Jonas Hasler captured in a snowboard action sequence above spectators" },
+  { src: "/assets/IMG_0282.jpeg", alt: "Jonas Hasler wearing a competition bib during a snowboard event" },
+  { src: "/assets/IMG_3911.jpeg", alt: "Portrait of Swiss snowboard athlete Jonas Hasler in winter gear" },
+  { src: "/assets/IMG_3917.jpeg", alt: "Jonas Hasler preparing for a professional snowboard competition" },
+  { src: "/assets/IMG_8595.jpeg", alt: "Jonas Hasler standing on his red snowboard at The Snow League" },
+  { src: "/assets/IMG_9724.jpeg", alt: "Jonas Hasler competing in snowboard halfpipe at The Snow League" },
+  { src: "/assets/IMG_9807.jpeg", alt: "Jonas Hasler giving an SRF interview after a snowboard competition" },
+  { src: "/assets/IMG_9937.jpeg", alt: "Jonas Hasler holding his snowboard during a Snow League media interview" }
 ];
 
 export function GalleryPage() {
@@ -29,11 +29,11 @@ export function GalleryPage() {
         </header>
 
         <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
-          {galleryImages.map((src, index) => (
-            <figure key={`${src}-${index}`} className="mb-4 overflow-hidden rounded-md border border-white/10 bg-black/35">
+          {galleryImages.map((image) => (
+            <figure key={image.src} className="mb-4 overflow-hidden rounded-md border border-white/10 bg-black/35">
               <img
-                src={src}
-                alt={`Jonas Hasler gallery image ${index + 1}`}
+                src={image.src}
+                alt={image.alt}
                 className="h-auto w-full object-cover transition duration-500 ease-out hover:scale-[1.02]"
                 loading="lazy"
               />
