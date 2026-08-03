@@ -101,13 +101,13 @@ export function CareerPage() {
 
           <dl className="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { value: "1", suffix: "X", label: "Olympics" },
+              { value: "1", suffix: "X", label: "Olympics", detail: "3 Starts" },
               { value: "5", suffix: "+", label: "Top 10 World Cup Finishes" },
               { value: "3", suffix: "X", label: "Snow League Participations" },
               { value: "2", suffix: "X", label: "Junior World Champ Podiums" },
-              { value: "U15", suffix: "", label: "European Cup Overall Title" },
+              { value: "1", suffix: "X", label: "European Cup Overall Title" },
               { value: "2023", suffix: "", label: "Junior Athlete of the Year" }
-            ].map(({ value, suffix, label }) => (
+            ].map(({ value, suffix, label, detail }) => (
               <div
                 key={label}
                 className="border-l-[3px] border-l-[#CCFF00] pl-4"
@@ -120,6 +120,11 @@ export function CareerPage() {
                 <dt className="mt-2 max-w-[18ch] font-mono text-[11px] uppercase leading-tight tracking-[0.08em] text-white/45">
                   {label}
                 </dt>
+                {detail && (
+                  <dd className="mt-1 font-mono text-[10px] uppercase leading-tight tracking-[0.08em] text-white/35">
+                    {detail}
+                  </dd>
+                )}
               </div>
             ))}
           </dl>
