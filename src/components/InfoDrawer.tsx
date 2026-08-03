@@ -8,6 +8,7 @@ type InfoDrawerProps = {
   onNavigateAbout?: () => void;
   onNavigateHome?: () => void;
   onNavigateSocialMedia?: () => void;
+  onNavigateMedia?: () => void;
   onNavigateGallery?: () => void;
   onNavigateCareer?: () => void;
   onNavigateAutograph?: () => void;
@@ -17,7 +18,7 @@ type InfoDrawerProps = {
 type DrawerView = "menu" | "contact";
 const CONTACT_EMAIL = "management@jonashasler.ch";
 
-export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onNavigateSocialMedia, onNavigateGallery, onNavigateCareer, onNavigateAutograph, onNavigateWhy }: InfoDrawerProps) {
+export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onNavigateSocialMedia, onNavigateMedia, onNavigateGallery, onNavigateCareer, onNavigateAutograph, onNavigateWhy }: InfoDrawerProps) {
   const [view, setView] = useState<DrawerView>("menu");
 
   const openContact = () => setView("contact");
@@ -107,6 +108,7 @@ export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onN
                     "HOME",
                     "ABOUT",
                     "SOCIAL MEDIA",
+                    "MEDIA",
                     "WHY",
                     "CAREER",
                     "GALLERY",
@@ -128,6 +130,11 @@ export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onN
 
                         if (item === "SOCIAL MEDIA") {
                           onNavigateSocialMedia?.();
+                          onClose();
+                        }
+
+                        if (item === "MEDIA") {
+                          onNavigateMedia?.();
                           onClose();
                         }
 

@@ -4,6 +4,7 @@ import { FooterMarquee } from "./components/FooterMarquee";
 import { Header } from "./components/Header";
 import { AboutPage } from "./components/AboutPage";
 import { SocialMediaPage } from "./components/SocialMediaPage";
+import { MediaPage } from "./components/MediaPage";
 import { GalleryPage } from "./components/GalleryPage";
 import { CareerPage } from "./components/CareerPage";
 import { AutographPage } from "./components/AutographPage";
@@ -58,6 +59,7 @@ function App() {
 
   const isAboutPage = path === "/about";
   const isSocialMediaPage = path === "/social-media";
+  const isMediaPage = path === "/media";
   const isGalleryPage = path === "/gallery";
   const isCareerPage = path === "/career";
   const isAutographPage = path === "/autograph";
@@ -107,6 +109,13 @@ function App() {
     }
   };
 
+  const navigateToMedia = () => {
+    if (window.location.pathname !== "/media") {
+      window.history.pushState({}, "", "/media");
+      setPath("/media");
+    }
+  };
+
   const navigateToGallery = () => {
     if (window.location.pathname !== "/gallery") {
       window.history.pushState({}, "", "/gallery");
@@ -153,6 +162,11 @@ function App() {
         title: "Jonas Hasler Social Media | Instagram & TikTok",
         description: "Follow Jonas Hasler on social media for updates, competition moments and behind-the-scenes freestyle snowboard content.",
         canonicalPath: "/social-media"
+      },
+      "/media": {
+        title: "Media & Press | Jonas Hasler",
+        description: "Explore press features, interviews, videos and official channels from professional snowboarder Jonas Hasler.",
+        canonicalPath: "/media"
       },
       "/gallery": {
         title: "Gallery | Jonas Hasler",
@@ -216,6 +230,8 @@ function App() {
         <AboutPage />
       ) : isSocialMediaPage ? (
         <SocialMediaPage />
+      ) : isMediaPage ? (
+        <MediaPage />
       ) : isGalleryPage ? (
         <GalleryPage />
       ) : isCareerPage ? (
@@ -266,6 +282,7 @@ function App() {
         onNavigateAbout={navigateToAbout}
         onNavigateHome={navigateToHome}
         onNavigateSocialMedia={navigateToSocialMedia}
+        onNavigateMedia={navigateToMedia}
         onNavigateGallery={navigateToGallery}
         onNavigateCareer={navigateToCareer}
         onNavigateAutograph={navigateToAutograph}
