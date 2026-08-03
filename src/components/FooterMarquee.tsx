@@ -13,7 +13,10 @@ export function FooterMarquee() {
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 overflow-hidden border-t border-white/10 bg-[#030014]/45 py-[0.4rem]">
       <div className="footer-track flex w-max whitespace-nowrap">
         {[0, 1].map((row) => (
-          <ul key={row} className="flex items-center gap-8 px-[1.2rem] md:gap-[2.8rem] md:px-[1.6rem]">
+          <ul
+            key={row}
+            className="flex min-w-screen shrink-0 items-center justify-around gap-8 px-[1.2rem] md:gap-[2.8rem] md:px-[1.6rem]"
+          >
             {sponsors.map((sponsor) => (
               <li key={`${row}-${sponsor.alt}`} className="flex items-center justify-center">
                 <a
