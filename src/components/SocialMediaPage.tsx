@@ -16,6 +16,7 @@ const trustedPartners = [
   { name: "Stiftung Integral", logo: "/assets/partners/stiftung-integral.png", href: "https://integral.swiss/" },
   { name: "Betty Bossi", logo: "/assets/partners/betty-bossi.jpg", href: "https://www.bettybossi.ch/" },
   { name: "Sunrise", logo: "/assets/partners/sunrise.svg", href: "http://www.sunrise.ch" },
+  { name: "WPP Media", logo: "/assets/partners/wpp-media.png", href: "https://www.wppmedia.com/" },
   {
     name: "Blutstammzellenspende Schweizerisches Rotes Kreuz",
     logo: "/assets/partners/blutspende-srk.svg",
@@ -61,7 +62,7 @@ export function SocialMediaPage() {
           <h2 id="trusted-partners-title" className="font-display text-3xl uppercase tracking-[0.04em] text-[#CCFF00]">
             Trusted Partners
           </h2>
-          <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:grid-cols-8">
+          <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:grid-cols-9">
             {trustedPartners.map((partner) => (
               <li key={partner.name} className="flex min-h-20 items-center justify-center">
                 <a
