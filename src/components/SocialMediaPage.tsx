@@ -17,6 +17,9 @@ const trustedPartners = [
   { name: "Betty Bossi", logo: "/assets/partners/betty-bossi.jpg", href: "https://www.bettybossi.ch/" },
   { name: "Sunrise", logo: "/assets/partners/sunrise.svg", href: "http://www.sunrise.ch" },
   { name: "WPP Media", logo: "/assets/partners/wpp-media.png", href: "https://www.wppmedia.com/" },
+  { name: "Insta360", logo: "/assets/partners/insta360.png", href: "https://www.insta360.com/de/" },
+  { name: "Sensolar", logo: "/assets/partners/sensolar.png", href: "https://sensolar.ch/" },
+  { name: "The Snow League", logo: "/assets/partners/snow-league.svg", href: "https://thesnowleague.com/", preserveLightLogo: true },
   {
     name: "Blutstammzellenspende Schweizerisches Rotes Kreuz",
     logo: "/assets/partners/blutspende-srk.svg",
@@ -62,7 +65,7 @@ export function SocialMediaPage() {
           <h2 id="trusted-partners-title" className="font-display text-3xl uppercase tracking-[0.04em] text-[#CCFF00]">
             Trusted Partners
           </h2>
-          <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:grid-cols-9">
+          <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:grid-cols-6">
             {trustedPartners.map((partner) => (
               <li key={partner.name} className="flex min-h-20 items-center justify-center">
                 <a
@@ -75,7 +78,7 @@ export function SocialMediaPage() {
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="max-h-[29px] max-w-[108px] object-contain opacity-40 grayscale invert contrast-125 mix-blend-screen transition hover:opacity-80"
+                    className={`max-h-[29px] max-w-[108px] object-contain opacity-40 grayscale contrast-125 mix-blend-screen transition hover:opacity-80 ${partner.preserveLightLogo ? "" : "invert"}`}
                   />
                 </a>
               </li>
