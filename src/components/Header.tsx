@@ -15,8 +15,8 @@ export function Header({ onOpenDrawer, onNavigateHome }: HeaderProps) {
           className="group inline-flex items-center gap-2 whitespace-nowrap"
           aria-label="Go to home"
         >
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-[#CCFF00] text-[13px] text-black transition-transform duration-300 group-hover:rotate-180 sm:h-10 sm:w-10 sm:text-base">
-            ✦
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-[#CCFF00] font-display text-[10px] tracking-[0.04em] text-[#0A071A] transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:w-10 sm:text-[13px]">
+            JH
           </span>
           <span className="font-display text-[0.9rem] tracking-[0.14em] text-white sm:text-xl sm:tracking-[0.2em] md:text-2xl">JONAS HASLER</span>
         </button>
