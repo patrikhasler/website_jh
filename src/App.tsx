@@ -278,6 +278,7 @@ function App() {
 
       <InfoDrawer
         open={drawerOpen}
+        currentPath={path}
         onClose={() => setDrawerOpen(false)}
         onNavigateAbout={navigateToAbout}
         onNavigateHome={navigateToHome}

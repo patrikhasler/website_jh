@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 
 type InfoDrawerProps = {
   open: boolean;
+  currentPath: string;
   onClose: () => void;
   onNavigateAbout?: () => void;
   onNavigateHome?: () => void;
@@ -17,8 +18,18 @@ type InfoDrawerProps = {
 
 type DrawerView = "menu" | "contact";
 const CONTACT_EMAIL = "management@jonashasler.ch";
+const MENU_PATHS: Record<string, string> = {
+  HOME: "/",
+  ABOUT: "/about",
+  "SOCIAL MEDIA": "/social-media",
+  CAREER: "/career",
+  "WHY ME": "/why",
+  MEDIA: "/media",
+  GALLARY: "/gallery",
+  "AUTOGRAPH CARD": "/autograph"
+};
 
-export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onNavigateSocialMedia, onNavigateMedia, onNavigateGallery, onNavigateCareer, onNavigateAutograph, onNavigateWhy }: InfoDrawerProps) {
+export function InfoDrawer({ open, currentPath, onClose, onNavigateAbout, onNavigateHome, onNavigateSocialMedia, onNavigateMedia, onNavigateGallery, onNavigateCareer, onNavigateAutograph, onNavigateWhy }: InfoDrawerProps) {
   const [view, setView] = useState<DrawerView>("menu");
 
   const openContact = () => setView("contact");
@@ -108,15 +119,16 @@ export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onN
                     "HOME",
                     "ABOUT",
                     "SOCIAL MEDIA",
-                    "MEDIA",
-                    "WHY",
                     "CAREER",
-                    "GALLERY",
+                    "WHY ME",
+                    "MEDIA",
+                    "GALLARY",
                     "AUTOGRAPH CARD",
                   ].map((item) => (
                     <button
                       type="button"
                       key={item}
+                      aria-current={currentPath === MENU_PATHS[item] ? "page" : undefined}
                       onClick={() => {
                         if (item === "HOME") {
                           onNavigateHome?.();
@@ -138,12 +150,12 @@ export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onN
                           onClose();
                         }
 
-                        if (item === "WHY") {
+                        if (item === "WHY ME") {
                           onNavigateWhy?.();
                           onClose();
                         }
 
-                        if (item === "GALLERY") {
+                        if (item === "GALLARY") {
                           onNavigateGallery?.();
                           onClose();
                         }
@@ -158,7 +170,7 @@ export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onN
                           onClose();
                         }
                       }}
-                      className="block w-full border-b border-white/15 py-4 text-left font-display text-4xl tracking-[0.04em] text-white transition hover:text-[#CCFF00]"
+                      className={`block w-full border-b border-white/15 py-4 text-left font-display text-4xl tracking-[0.04em] transition hover:text-[#CCFF00] ${currentPath === MENU_PATHS[item] ? "text-[#CCFF00]" : "text-white"}`}
                     >
                       {item}
                     </button>
@@ -167,7 +179,7 @@ export function InfoDrawer({ open, onClose, onNavigateAbout, onNavigateHome, onN
                   <button
                     type="button"
                     onClick={openContact}
-                    className="block w-full border-b border-white/15 py-4 text-left font-display text-4xl tracking-[0.04em] text-[#CCFF00]"
+                    className="block w-full border-b border-white/15 py-4 text-left font-display text-4xl tracking-[0.04em] text-white transition hover:text-[#CCFF00]"
                   >
                     GET IN TOUCH
                   </button>
