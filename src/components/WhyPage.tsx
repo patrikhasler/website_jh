@@ -54,11 +54,16 @@ export function WhyPage() {
             </h1>
           </div>
           <figure className="aspect-[16/10] overflow-hidden rounded-md border border-white/10 bg-black/30">
-            <img
-              src="/assets/15.jpeg"
-              alt="Jonas Hasler performing a snowboard trick"
-              className="h-full w-full object-cover grayscale contrast-125"
-            />
+            <picture>
+              <source srcSet="/assets/15-why.avif" type="image/avif" />
+              <img
+                src="/assets/15.jpeg"
+                alt="Jonas Hasler performing a snowboard trick"
+                width="1600"
+                height="1067"
+                className="h-full w-full object-cover grayscale contrast-125"
+              />
+            </picture>
           </figure>
         </header>
 

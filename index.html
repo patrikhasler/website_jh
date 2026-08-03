@@ -8,32 +8,15 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.svg" />
 
-  <title>
-    Jonas Hasler | Swiss Olympic Snowboarder | Halfpipe, Slopestyle & Big Air
-  </title>
-
-  <meta
-    name="description"
-    content="Jonas Hasler is a Swiss professional snowboarder competing in Halfpipe, Slopestyle and Big Air. Official website with career, results, videos and latest updates."
-  />
-
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="author" content="Jonas Hasler" />
   <meta name="theme-color" content="#030014" />
 
-  <link rel="canonical" href="https://jonashasler.ch/" />
-
-
   <!-- Open Graph -->
   <meta property="og:type" content="profile" />
   <meta property="og:site_name" content="Jonas Hasler" />
-  <meta property="og:title" content="Jonas Hasler | Swiss Olympic Snowboarder" />
-  <meta
-    property="og:description"
-    content="Official website of Swiss snowboard athlete Jonas Hasler competing in Halfpipe, Slopestyle and Big Air."
-  />
-  <meta property="og:url" content="https://jonashasler.ch/" />
   <meta property="og:image" content="https://jonashasler.ch/assets/14.jpg" />
+  <meta property="og:image:alt" content="Jonas Hasler competing in freestyle snowboarding" />
 
   <meta property="profile:first_name" content="Jonas" />
   <meta property="profile:last_name" content="Hasler" />
@@ -41,12 +24,8 @@
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Jonas Hasler | Swiss Olympic Snowboarder" />
-  <meta
-    name="twitter:description"
-    content="Swiss snowboard athlete competing in Halfpipe, Slopestyle and Big Air."
-  />
   <meta name="twitter:image" content="https://jonashasler.ch/assets/14.jpg" />
+  <meta name="twitter:image:alt" content="Jonas Hasler competing in freestyle snowboarding" />
 
 
   <!-- Structured Data: Person -->
@@ -54,8 +33,10 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://jonashasler.ch/#jonas-hasler",
 
     "name": "Jonas Hasler",
+    "birthDate": "2006-06-01",
     "url": "https://jonashasler.ch/",
     "image": "https://jonashasler.ch/assets/14.jpg",
 
@@ -91,7 +72,11 @@
 
     "sameAs": [
       "https://www.instagram.com/j0.nash",
-      "https://www.tiktok.com/@jonas.hasler"
+      "https://www.tiktok.com/@jonas.hasler",
+      "https://linktr.ee/jonashasler",
+      "https://www.swiss-ski.ch/snowboard/athletinnen/detail/jonas-hasler/",
+      "https://thesnowleague.com/athlete/men-snowboarding-halfpipe-jonas-hasler",
+      "https://www.fis-ski.com/DB/general/athlete-biography.html?sectorcode=SB&competitorid=246604"
     ]
   }
   </script>
@@ -108,6 +93,10 @@
 
     "url": "https://jonashasler.ch/",
 
+    "author": {
+      "@id": "https://jonashasler.ch/#jonas-hasler"
+    },
+
     "description": "Official website of Swiss snowboard athlete Jonas Hasler."
   }
   </script>
@@ -119,7 +108,7 @@
 
   <div id="root"></div>
 
-  <script type="module" src="/src/main.tsx"></script>
+  <script prerender type="module" src="/src/main.tsx"></script>
 
 </body>
 </html>

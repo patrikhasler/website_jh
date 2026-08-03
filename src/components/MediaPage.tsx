@@ -7,11 +7,16 @@ export function MediaPage() {
     <main className="relative z-20 flex min-h-screen items-center justify-center px-4 pb-28 pt-24 font-sans md:px-8 md:pt-28">
       <section className="grid w-full max-w-[1100px] overflow-hidden rounded-md border border-white/10 bg-[#171a28]/72 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur-sm md:grid-cols-[0.8fr_1.2fr]">
         <figure className="min-h-[360px] bg-black/40 md:min-h-[620px]">
-          <img
-            src="/assets/IMG_9937.jpeg"
-            alt="Jonas Hasler at The Snow League"
-            className="h-full w-full object-cover object-[72%_center] grayscale"
-          />
+          <picture>
+            <source srcSet="/assets/IMG_9937-media.avif" type="image/avif" />
+            <img
+              src="/assets/IMG_9937.jpeg"
+              alt="Jonas Hasler at The Snow League"
+              width="1600"
+              height="1066"
+              className="h-full w-full object-cover object-[72%_center] grayscale"
+            />
+          </picture>
         </figure>
 
         <div className="flex flex-col justify-center p-6 md:p-10 lg:p-14">

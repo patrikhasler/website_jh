@@ -25,7 +25,7 @@ const MENU_PATHS: Record<string, string> = {
   CAREER: "/career",
   "WHY ME": "/why",
   MEDIA: "/media",
-  GALLARY: "/gallery",
+  GALLERY: "/gallery",
   "AUTOGRAPH CARD": "/autograph"
 };
 
@@ -115,21 +115,14 @@ export function InfoDrawer({ open, currentPath, onClose, onNavigateAbout, onNavi
             <div className="h-[calc(100vh-69px)] overflow-y-auto px-6 pb-10 pt-6 md:px-8">
               {view === "menu" ? (
                 <div className="space-y-3">
-                  {[
-                    "HOME",
-                    "ABOUT",
-                    "SOCIAL MEDIA",
-                    "CAREER",
-                    "WHY ME",
-                    "MEDIA",
-                    "GALLARY",
-                    "AUTOGRAPH CARD",
-                  ].map((item) => (
-                    <button
-                      type="button"
+                  {Object.entries(MENU_PATHS).map(([item, itemPath]) => (
+                    <a
                       key={item}
-                      aria-current={currentPath === MENU_PATHS[item] ? "page" : undefined}
-                      onClick={() => {
+                      href={itemPath}
+                      aria-current={currentPath === itemPath ? "page" : undefined}
+                      onClick={(event) => {
+                        event.preventDefault();
+
                         if (item === "HOME") {
                           onNavigateHome?.();
                           onClose();
@@ -155,7 +148,7 @@ export function InfoDrawer({ open, currentPath, onClose, onNavigateAbout, onNavi
                           onClose();
                         }
 
-                        if (item === "GALLARY") {
+                        if (item === "GALLERY") {
                           onNavigateGallery?.();
                           onClose();
                         }
@@ -170,10 +163,10 @@ export function InfoDrawer({ open, currentPath, onClose, onNavigateAbout, onNavi
                           onClose();
                         }
                       }}
-                      className={`block w-full border-b border-white/15 py-4 text-left font-display text-4xl tracking-[0.04em] transition hover:text-[#CCFF00] ${currentPath === MENU_PATHS[item] ? "text-[#CCFF00]" : "text-white"}`}
+                      className={`block w-full border-b border-white/15 py-4 text-left font-display text-4xl tracking-[0.04em] transition hover:text-[#CCFF00] ${currentPath === itemPath ? "text-[#CCFF00]" : "text-white"}`}
                     >
                       {item}
-                    </button>
+                    </a>
                   ))}
 
                   <button

@@ -18,6 +18,59 @@ const WORDS = ["AMPLITUDE", "STYLE", "CREATIVITY", "PRECISION", "PROGRESSION"];
 const BIO =
   "I'm Jonas Hasler — professional snowboarder, olympian, national team member and halfpipe, slopestyle and big air rider. I craft bold runs that are intuitive, impactful, and built to stand out.";
 
+export const SITE_ORIGIN = "https://jonashasler.ch";
+
+export type SeoData = {
+  title: string;
+  description: string;
+  canonicalPath: string;
+};
+
+export const SEO_BY_PATH: Record<string, SeoData> = {
+  "/": {
+    title: "Jonas Hasler | Professional Snowboarder",
+    description: "Official website of Jonas Hasler, professional snowboarder, olympian and Swiss national team member in halfpipe, slopestyle and big air.",
+    canonicalPath: "/"
+  },
+  "/about": {
+    title: "About Jonas Hasler | Professional Snowboarder",
+    description: "Learn more about Jonas Hasler, Swiss national team member, olympian and freestyle snowboard athlete.",
+    canonicalPath: "/about"
+  },
+  "/social-media": {
+    title: "Jonas Hasler Social Media | Instagram & TikTok",
+    description: "Follow Jonas Hasler on social media for updates, competition moments and behind-the-scenes freestyle snowboard content.",
+    canonicalPath: "/social-media"
+  },
+  "/media": {
+    title: "Media & Press | Jonas Hasler",
+    description: "Explore press features, interviews, videos and official channels from professional snowboarder Jonas Hasler.",
+    canonicalPath: "/media"
+  },
+  "/gallery": {
+    title: "Gallery | Jonas Hasler",
+    description: "Gallery of selected moments from Jonas Hasler's halfpipe, slopestyle and big air sessions.",
+    canonicalPath: "/gallery"
+  },
+  "/career": {
+    title: "Career | Jonas Hasler",
+    description: "Career, achievements and timeline of Swiss snowboarder Jonas Hasler – Olympian, national team member and freestyle athlete.",
+    canonicalPath: "/career"
+  },
+  "/autograph": {
+    title: "Autograph Card | Jonas Hasler",
+    description: "Request a free autograph card from Jonas Hasler – just send a stamped return envelope to Postfach 205, 7032 Laax, Switzerland.",
+    canonicalPath: "/autograph"
+  },
+  "/why": {
+    title: "Why Jonas Is Different | Jonas Hasler",
+    description: "Discover what sets Jonas Hasler apart through style, progression, stoke, authentic connection and elite performance across snowboard disciplines.",
+    canonicalPath: "/why"
+  }
+};
+
+export const getSeoForPath = (path: string) => SEO_BY_PATH[path] ?? SEO_BY_PATH["/"];
+
 function AnimatedBio({ remountKey }: { remountKey: number }) {
   const chars = useMemo(() => BIO.split(""), []);
 
@@ -51,11 +104,15 @@ function AnimatedBio({ remountKey }: { remountKey: number }) {
   );
 }
 
-function App() {
+type AppProps = {
+  initialPath?: string;
+};
+
+function App({ initialPath }: AppProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
   const [bioKey, setBioKey] = useState(0);
-  const [path, setPath] = useState(() => window.location.pathname);
+  const [path, setPath] = useState(() => initialPath ?? window.location.pathname);
 
   const isAboutPage = path === "/about";
   const isSocialMediaPage = path === "/social-media";
@@ -145,52 +202,7 @@ function App() {
   };
 
   useEffect(() => {
-    const origin = "https://jonashasler.ch";
-
-    const seoByPath: Record<string, { title: string; description: string; canonicalPath: string }> = {
-      "/": {
-        title: "Jonas Hasler | Professional Snowboarder",
-        description: "Official website of Jonas Hasler, professional snowboarder, olympian and Swiss national team member in halfpipe, slopestyle and big air.",
-        canonicalPath: "/"
-      },
-      "/about": {
-        title: "About Jonas Hasler | Professional Snowboarder",
-        description: "Learn more about Jonas Hasler, Swiss national team member, olympian and freestyle snowboard athlete.",
-        canonicalPath: "/about"
-      },
-      "/social-media": {
-        title: "Jonas Hasler Social Media | Instagram & TikTok",
-        description: "Follow Jonas Hasler on social media for updates, competition moments and behind-the-scenes freestyle snowboard content.",
-        canonicalPath: "/social-media"
-      },
-      "/media": {
-        title: "Media & Press | Jonas Hasler",
-        description: "Explore press features, interviews, videos and official channels from professional snowboarder Jonas Hasler.",
-        canonicalPath: "/media"
-      },
-      "/gallery": {
-        title: "Gallery | Jonas Hasler",
-        description: "Gallery of selected moments from Jonas Hasler's halfpipe, slopestyle and big air sessions.",
-        canonicalPath: "/gallery"
-      },
-      "/career": {
-        title: "Career | Jonas Hasler",
-        description: "Career, achievements and timeline of Swiss snowboarder Jonas Hasler – Olympian, national team member and freestyle athlete.",
-        canonicalPath: "/career"
-      },
-      "/autograph": {
-        title: "Autograph Card | Jonas Hasler",
-        description: "Request a free autograph card from Jonas Hasler – just send a stamped return envelope to Postfach 205, 7032 Laax, Switzerland.",
-        canonicalPath: "/autograph"
-      },
-      "/why": {
-        title: "Why Jonas Is Different | Jonas Hasler",
-        description: "Discover what sets Jonas Hasler apart through style, progression, stoke, authentic connection and elite performance across snowboard disciplines.",
-        canonicalPath: "/why"
-      }
-    };
-
-    const seo = seoByPath[path] ?? seoByPath["/"];
+    const seo = getSeoForPath(path);
     document.title = seo.title;
 
     const setMeta = (selector: string, attr: "name" | "property", key: string, value: string) => {
@@ -206,7 +218,7 @@ function App() {
     setMeta('meta[name="description"]', "name", "description", seo.description);
     setMeta('meta[property="og:title"]', "property", "og:title", seo.title);
     setMeta('meta[property="og:description"]', "property", "og:description", seo.description);
-    setMeta('meta[property="og:url"]', "property", "og:url", `${origin}${seo.canonicalPath}`);
+    setMeta('meta[property="og:url"]', "property", "og:url", `${SITE_ORIGIN}${seo.canonicalPath}`);
     setMeta('meta[name="twitter:title"]', "name", "twitter:title", seo.title);
     setMeta('meta[name="twitter:description"]', "name", "twitter:description", seo.description);
 
@@ -216,7 +228,7 @@ function App() {
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", `${origin}${seo.canonicalPath}`);
+    canonical.setAttribute("href", `${SITE_ORIGIN}${seo.canonicalPath}`);
   }, [path]);
 
   return (
@@ -260,16 +272,27 @@ function App() {
           </main>
 
           <div className="pointer-events-none absolute inset-0 z-10">
-            <img
-              src="/assets/14.jpg"
-              alt=""
-              className="hero-bg-base h-full w-full brightness-[0.55] grayscale contrast-125"
-            />
-            <img
-              src="/assets/14.jpg"
-              alt="Jonas Hasler snowboard action shot"
-              className="hero-bg-animated hero-bg-foreground pointer-events-auto absolute inset-0 h-full w-full brightness-95 grayscale contrast-125"
-            />
+            <picture className="block h-full w-full">
+              <source srcSet="/assets/14-hero.avif" type="image/avif" />
+              <img
+                src="/assets/14.jpg"
+                alt=""
+                width="2400"
+                height="1600"
+                className="hero-bg-base h-full w-full brightness-[0.55] grayscale contrast-125"
+              />
+            </picture>
+            <picture className="pointer-events-auto absolute inset-0 block h-full w-full">
+              <source srcSet="/assets/14-hero.avif" type="image/avif" />
+              <img
+                src="/assets/14.jpg"
+                alt="Jonas Hasler snowboard action shot"
+                width="2400"
+                height="1600"
+                fetchPriority="high"
+                className="hero-bg-animated hero-bg-foreground h-full w-full brightness-95 grayscale contrast-125"
+              />
+            </picture>
           </div>
         </>
       )}
