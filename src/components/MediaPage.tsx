@@ -21,7 +21,7 @@ export function MediaPage() {
           </h1>
           <p className="mt-4 font-mono text-sm uppercase tracking-[0.08em] text-white/60">@jonashasler</p>
           <p className="mt-6 max-w-[46ch] text-sm leading-relaxed text-white/80 md:text-base">
-            Press features, athlete profiles, interviews, videos and every official Jonas Hasler channel in one place.
+            A curated collection of media coverage featuring interviews, videos, TV appearances, newspaper stories, partner features and magazine profiles from Jonas' journey on and beyond the snow.
           </p>
 
           <a
