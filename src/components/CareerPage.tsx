@@ -102,7 +102,7 @@ export function CareerPage() {
           <dl className="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { value: "1", suffix: "X", label: "Olympics", detail: "3 Starts" },
-              { value: "5", suffix: "+", label: "Top 10 World Cup Finishes" },
+              { value: "6", suffix: "+", label: "Top 10 World Cup Finishes" },
               { value: "3", suffix: "X", label: "Snow League Participations" },
               { value: "2", suffix: "X", label: "Junior World Champ Podiums" },
               { value: "1", suffix: "X", label: "European Cup Overall Title" },
