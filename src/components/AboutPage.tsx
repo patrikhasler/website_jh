@@ -13,16 +13,13 @@ export function AboutPage() {
       <section className="w-full max-w-[1400px] rounded-md border border-white/10 bg-[#171a28]/72 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur-sm md:p-7">
         <div className="grid gap-5 md:grid-cols-[280px_1fr] md:gap-7">
           <div className="overflow-hidden rounded-md bg-black/35">
-            <picture>
-              <source srcSet="/assets/1-about.avif" type="image/avif" />
-              <img
-                src="/assets/1.jpg"
-                alt="Portrait of Swiss professional snowboard athlete Jonas Hasler"
-                width="1000"
-                height="1499"
-                className="h-full w-full object-cover object-center"
-              />
-            </picture>
+            <img
+              src="/assets/1.jpg"
+              alt="Portrait of Swiss professional snowboard athlete Jonas Hasler"
+              width="1000"
+              height="1499"
+              className="h-full w-full object-cover object-center"
+            />
           </div>
 
           <div>

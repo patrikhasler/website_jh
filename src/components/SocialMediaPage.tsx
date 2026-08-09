@@ -33,10 +33,7 @@ export function SocialMediaPage() {
       <section className="w-full max-w-[1400px] rounded-md border border-white/10 bg-[#171a28]/72 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur-sm md:p-7">
         <div className="grid gap-5 md:grid-cols-[500px_1fr] md:gap-8 lg:grid-cols-[620px_1fr]">
           <figure className="min-h-[480px] overflow-hidden rounded-md border border-white/10 bg-black/45 p-2 md:min-h-[640px] lg:min-h-[760px]">
-            <picture>
-              <source srcSet="/assets/EMV-social.avif" type="image/avif" />
-              <img src="/assets/EMV.jpg" alt="Social media portrait of snowboard athlete Jonas Hasler" width="1400" height="1897" className="h-full w-full object-contain object-center" />
-            </picture>
+            <img src="/assets/EMV.jpg" alt="Social media portrait of snowboard athlete Jonas Hasler" width="1400" height="1897" className="h-full w-full object-contain object-center" />
           </figure>
 
           <div>
