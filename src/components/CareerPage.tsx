@@ -159,7 +159,7 @@ export function CareerPage() {
               Quick Stats
             </h2>
             <ul className="space-y-4 font-sans text-[0.95rem] leading-relaxed text-white/70">
-              <li className="border-l-2 border-[#CCFF00] pl-4"><strong className="block font-mono text-xs uppercase tracking-[0.08em] text-white/90">Home Mountain</strong><span className="mt-1 block">LAAX (Crap Sogn Gion)</span></li>
+              <li className="border-l-2 border-[#CCFF00] pl-4"><strong className="block font-mono text-xs uppercase tracking-[0.08em] text-white/90">Home Mountain</strong><span className="mt-1 block">LAAX</span></li>
               <li className="border-l-2 border-[#CCFF00] pl-4"><strong className="block font-mono text-xs uppercase tracking-[0.08em] text-white/90">Disciplines</strong><span className="mt-1 block">Halfpipe | Slopestyle | Big Air</span></li>
               <li className="border-l-2 border-[#CCFF00] pl-4"><strong className="block font-mono text-xs uppercase tracking-[0.08em] text-white/90">Passions</strong><span className="mt-1 block">Freestyle Snowboarding, Videography, Aviation</span></li>
             </ul>
