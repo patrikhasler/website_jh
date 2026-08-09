@@ -42,7 +42,6 @@ export function InfoDrawer({ open, currentPath, onClose, onNavigateAbout, onNavi
     const formData = new FormData(event.currentTarget);
     const name = String(formData.get("name") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
-    const projectType = String(formData.get("projectType") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
 
     const subject = encodeURIComponent(`Get in Touch Inquiry${name ? ` - ${name}` : ""}`);
@@ -50,7 +49,6 @@ export function InfoDrawer({ open, currentPath, onClose, onNavigateAbout, onNavi
       [
         `Name: ${name || "-"}`,
         `Email: ${email || "-"}`,
-        `Project Type: ${projectType || "-"}`,
         "",
         "Message:",
         message || "-"
@@ -203,16 +201,6 @@ export function InfoDrawer({ open, currentPath, onClose, onNavigateAbout, onNavi
                       className="w-full border-0 border-b border-white/40 bg-transparent py-2 text-white outline-none transition placeholder:text-white/30 focus:border-[#CCFF00]"
                       placeholder="you@example.com"
                     />
-                  </label>
-
-                  <label className="block">
-                    <span className="mb-2 block font-mono text-xs tracking-[0.12em] text-white/70">PROJECT TYPE</span>
-                    <select name="projectType" className="w-full border-0 border-b border-white/40 bg-transparent py-2 text-white outline-none transition focus:border-[#CCFF00]">
-                      <option value="">Select project type</option>
-                      <option className="bg-[#171a28]" value="campaign">Campaign collaboration</option>
-                      <option className="bg-[#171a28]" value="sponsor">Sponsor activation</option>
-                      <option className="bg-[#171a28]" value="editorial">Editorial production</option>
-                    </select>
                   </label>
 
                   <label className="block">
