@@ -18,7 +18,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="profile" />
   <meta property="og:site_name" content="Jonas Hasler" />
-  <meta property="og:image" content="https://jonashasler.ch/assets/google_search_picture.jpg" />
+  <meta property="og:image" content="https://jonashasler.ch/assets/14.jpg" />
   <meta property="og:image:alt" content="Jonas Hasler competing in freestyle snowboarding" />
 
   <meta property="profile:first_name" content="Jonas" />
@@ -27,7 +27,7 @@
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://jonashasler.ch/assets/google_search_picture.jpg" />
+  <meta name="twitter:image" content="https://jonashasler.ch/assets/14.jpg" />
   <meta name="twitter:image:alt" content="Jonas Hasler competing in freestyle snowboarding" />
 
 
@@ -41,7 +41,7 @@
     "name": "Jonas Hasler",
     "birthDate": "2006-06-01",
     "url": "https://jonashasler.ch",
-    "image": "https://jonashasler.ch/assets/google_search_picture.jpg",
+    "image": "https://jonashasler.ch/assets/14.jpg",
 
     "jobTitle": "Professional Snowboarder",
 
