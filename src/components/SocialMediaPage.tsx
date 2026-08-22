@@ -20,10 +20,10 @@ const trustedPartners = [
   { name: "Insta360", logo: "/assets/partners/insta360.png", href: "https://www.insta360.com/de/" },
   { name: "Sensolar", logo: "/assets/partners/sensolar.png", href: "https://sensolar.ch/" },
   { name: "The Snow League", logo: "/assets/partners/snow-league.svg", href: "https://thesnowleague.com/", preserveLightLogo: true },
-  { name: "Sony", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=www.sony.com", href: "https://www.sony.com/en/", preserveLightLogo: true },
+  { name: "Sony", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=www.sony.com", href: "https://www.sony.com/en/", textLogo: true },
   { name: "Netzwerk Sport", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=netzwerksport.ch", href: "https://netzwerksport.ch/", preserveLightLogo: true },
-  { name: "Bruno's", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=brunos.ch", href: "http://brunos.ch/", preserveLightLogo: true },
-  { name: "ESN", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=www.esn.com", href: "https://www.esn.com", preserveLightLogo: true },
+  { name: "Bruno's", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=brunos.ch", href: "http://brunos.ch/", preserveLightLogo: true, largeLogo: true },
+  { name: "ESN", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=www.esn.com", href: "https://www.esn.com", preserveLightLogo: true, largeLogo: true },
   {
     name: "Blutstammzellenspende Schweizerisches Rotes Kreuz",
     logo: "/assets/partners/blutspende-srk.svg",
@@ -79,11 +79,17 @@ export function SocialMediaPage() {
                   aria-label={`${partner.name} website`}
                   className="flex h-20 w-full items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#CCFF00]"
                 >
-                  <img
-                    src={partner.logo}
-                    alt={`${partner.name} partner logo for snowboard athlete Jonas Hasler`}
-                    className={`max-h-[29px] max-w-[108px] object-contain opacity-40 grayscale contrast-125 mix-blend-screen transition hover:opacity-80 ${partner.preserveLightLogo ? "" : "invert"}`}
-                  />
+                  {partner.textLogo ? (
+                    <span className="font-display text-3xl font-black uppercase tracking-[-0.03em] text-white/45 transition hover:text-white/80">
+                      {partner.name}
+                    </span>
+                  ) : (
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} partner logo for snowboard athlete Jonas Hasler`}
+                      className={`object-contain opacity-40 grayscale contrast-125 mix-blend-screen transition hover:opacity-80 ${partner.largeLogo ? "max-h-[52px] max-w-[170px]" : "max-h-[29px] max-w-[108px]"} ${partner.preserveLightLogo ? "" : "invert"}`}
+                    />
+                  )}
                 </a>
               </li>
             ))}
