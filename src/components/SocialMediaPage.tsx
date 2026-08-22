@@ -23,7 +23,7 @@ const trustedPartners = [
   { name: "The Snow League", logo: "/assets/partners/snow-league.svg", href: "https://thesnowleague.com/", preserveLightLogo: true },
   { name: "Sony", logo: "", href: "https://www.sony.com/en/", textLogo: true },
   { name: "Netzwerk Sport", logo: "/assets/partners/netzwerk-sport.png", href: "https://netzwerksport.ch/", fixedLogo: true, cropBottom: true },
-  { name: "Bruno's", logo: "/assets/partners/brunos-pxd.png", href: "http://brunos.ch/" },
+  { name: "Bruno's", logo: "/assets/partners/brunos-pxd.png", href: "http://brunos.ch/", forceLightLogo: true },
   {
     name: "Blutstammzellenspende Schweizerisches Rotes Kreuz",
     logo: "/assets/partners/blutspende-srk.svg",
