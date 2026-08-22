@@ -9,7 +9,7 @@ const socialImpact = [
 ];
 
 const trustedPartners = [
-  { name: "ESN", logo: "/assets/partners/esn.jpg", href: "https://www.esn.com", fixedLogo: true },
+  { name: "ESN", logo: "/assets/partners/esn.jpg", href: "https://www.esn.com", largeLogo: true },
   { name: "Zalando", logo: "/assets/partners/zalando.svg", href: "https://www.zalando.ch/" },
   { name: "Migros", logo: "/assets/partners/migros.png", href: "https://www.migros.ch/" },
   { name: "EF Education First", logo: "/assets/partners/ef.png", href: "https://www.efswiss.ch/" },
