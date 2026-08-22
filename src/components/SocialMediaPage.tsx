@@ -9,6 +9,7 @@ const socialImpact = [
 ];
 
 const trustedPartners = [
+  { name: "ESN", logo: "", href: "https://www.esn.com", textLogo: true },
   { name: "Zalando", logo: "/assets/partners/zalando.svg", href: "https://www.zalando.ch/" },
   { name: "Migros", logo: "/assets/partners/migros.png", href: "https://www.migros.ch/" },
   { name: "EF Education First", logo: "/assets/partners/ef.png", href: "https://www.efswiss.ch/" },
@@ -18,12 +19,11 @@ const trustedPartners = [
   { name: "Sunrise", logo: "/assets/partners/sunrise.svg", href: "http://www.sunrise.ch" },
   { name: "WPP Media", logo: "/assets/partners/wpp-media.png", href: "https://www.wppmedia.com/" },
   { name: "Insta360", logo: "/assets/partners/insta360.png", href: "https://www.insta360.com/de/" },
-  { name: "Sensolar", logo: "/assets/partners/sensolar.png", href: "https://sensolar.ch/" },
+  { name: "Sensolar", logo: "/assets/partners/sensolar.png", href: "https://sensolar.ch/", forceLightLogo: true },
   { name: "The Snow League", logo: "/assets/partners/snow-league.svg", href: "https://thesnowleague.com/", preserveLightLogo: true },
   { name: "Sony", logo: "", href: "https://www.sony.com/en/", textLogo: true },
   { name: "Netzwerk Sport", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=netzwerksport.ch", href: "https://netzwerksport.ch/", preserveLightLogo: true, showName: true },
-  { name: "Bruno's", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=brunos.ch", href: "http://brunos.ch/", preserveLightLogo: true, largeLogo: true },
-  { name: "ESN", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=www.esn.com", href: "https://www.esn.com", preserveLightLogo: true, largeLogo: true },
+  { name: "Bruno's", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=brunos.ch", href: "http://brunos.ch/", preserveLightLogo: true, forceLightLogo: true, largeLogo: true },
   {
     name: "Blutstammzellenspende Schweizerisches Rotes Kreuz",
     logo: "/assets/partners/blutspende-srk.svg",
@@ -88,7 +88,7 @@ export function SocialMediaPage() {
                       <img
                         src={partner.logo}
                         alt={`${partner.name} partner logo for snowboard athlete Jonas Hasler`}
-                        className={`object-contain opacity-40 grayscale contrast-125 mix-blend-screen transition hover:opacity-80 ${partner.largeLogo ? "h-[52px] w-[170px]" : "max-h-[29px] max-w-[108px]"} ${partner.preserveLightLogo ? "" : "invert"}`}
+                        className={`object-contain opacity-40 grayscale contrast-125 mix-blend-screen transition hover:opacity-80 ${partner.largeLogo ? "h-[52px] w-[170px]" : "max-h-[29px] max-w-[108px]"} ${partner.forceLightLogo ? "brightness-0 invert" : partner.preserveLightLogo ? "" : "invert"}`}
                       />
                       {partner.showName && <span className="font-sans text-sm font-semibold text-white/45 transition group-hover:text-white/80">{partner.name}</span>}
                     </span>
