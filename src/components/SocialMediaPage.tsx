@@ -9,7 +9,7 @@ const socialImpact = [
 ];
 
 const trustedPartners = [
-  { name: "ESN", logo: "/assets/partners/esn.svg", href: "https://www.esn.com", forceLightLogo: true },
+  { name: "ESN", logo: "/assets/partners/esn.jpg", href: "https://www.esn.com", fixedLogo: true },
   { name: "Zalando", logo: "/assets/partners/zalando.svg", href: "https://www.zalando.ch/" },
   { name: "Migros", logo: "/assets/partners/migros.png", href: "https://www.migros.ch/" },
   { name: "EF Education First", logo: "/assets/partners/ef.png", href: "https://www.efswiss.ch/" },
@@ -22,7 +22,7 @@ const trustedPartners = [
   { name: "Sensolar", logo: "/assets/partners/sensolar.png", href: "https://sensolar.ch/", forceLightLogo: true },
   { name: "The Snow League", logo: "/assets/partners/snow-league.svg", href: "https://thesnowleague.com/", preserveLightLogo: true },
   { name: "Sony", logo: "", href: "https://www.sony.com/en/", textLogo: true },
-  { name: "Netzwerk Sport", logo: "/assets/partners/netzwerk-sport.svg", href: "https://netzwerksport.ch/", preserveColors: true, showName: true },
+  { name: "Netzwerk Sport", logo: "/assets/partners/netzwerk-sport.png", href: "https://netzwerksport.ch/", fixedLogo: true, cropBottom: true },
   { name: "Bruno's", logo: "/assets/partners/brunos.svg", href: "http://brunos.ch/", preserveColors: true, largeLogo: true },
   {
     name: "Blutstammzellenspende Schweizerisches Rotes Kreuz",
@@ -84,13 +84,12 @@ export function SocialMediaPage() {
                       {partner.name.toUpperCase()}
                     </span>
                   ) : (
-                    <span className={partner.showName ? "flex items-center gap-2" : "contents"}>
+                    <span className="contents">
                       <img
                         src={partner.logo}
                         alt={`${partner.name} partner logo for snowboard athlete Jonas Hasler`}
-                        className={`object-contain opacity-40 ${partner.preserveColors ? "" : "grayscale contrast-125 mix-blend-screen"} transition hover:opacity-80 ${partner.largeLogo ? "h-[52px] w-[170px]" : "max-h-[29px] max-w-[108px]"} ${partner.forceLightLogo ? "brightness-0 invert" : partner.preserveLightLogo ? "" : "invert"}`}
+                        className={`${partner.cropBottom ? "h-[70px] w-[108px] object-fill [clip-path:inset(0_0_22%_0)]" : partner.fixedLogo ? "h-[29px] w-[108px] object-fill" : "object-contain"} opacity-40 ${partner.preserveColors ? "" : "grayscale contrast-125 mix-blend-screen"} transition hover:opacity-80 ${partner.largeLogo ? "h-[52px] w-[170px]" : partner.fixedLogo || partner.cropBottom ? "" : "max-h-[29px] max-w-[108px]"} ${partner.forceLightLogo ? "brightness-0 invert" : partner.preserveLightLogo ? "" : "invert"}`}
                       />
-                      {partner.showName && <span className="font-sans text-sm font-semibold text-white/45 transition group-hover:text-white/80">{partner.name}</span>}
                     </span>
                   )}
                 </a>
