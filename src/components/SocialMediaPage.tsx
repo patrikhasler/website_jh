@@ -23,7 +23,7 @@ const trustedPartners = [
   { name: "The Snow League", logo: "/assets/partners/snow-league.svg", href: "https://thesnowleague.com/", preserveLightLogo: true },
   { name: "Sony", logo: "", href: "https://www.sony.com/en/", textLogo: true },
   { name: "Netzwerk Sport", logo: "/assets/partners/netzwerk-sport.png", href: "https://netzwerksport.ch/", fixedLogo: true, cropBottom: true },
-  { name: "Bruno's", logo: "/assets/partners/brunos.svg", href: "http://brunos.ch/", preserveColors: true, largeLogo: true },
+  { name: "Bruno's", logo: "/assets/partners/brunos-pxd.png", href: "http://brunos.ch/" },
   {
     name: "Blutstammzellenspende Schweizerisches Rotes Kreuz",
     logo: "/assets/partners/blutspende-srk.svg",
@@ -89,7 +89,7 @@ export function SocialMediaPage() {
                       <img
                         src={partner.logo}
                         alt={`${partner.name} partner logo for snowboard athlete Jonas Hasler`}
-                        className={`${partner.cropBottom ? "h-[90px] w-[140px] object-contain [clip-path:inset(0_0_22%_0)]" : partner.fixedLogo ? "h-[29px] w-[108px] object-contain" : "object-contain"} ${partner.cropBottom ? "opacity-50" : "opacity-40"} ${partner.preserveColors ? "" : "grayscale contrast-125"} ${partner.transparentLogo || !partner.preserveColors ? "mix-blend-screen" : ""} transition hover:opacity-80 ${partner.largeLogo ? "h-[52px] w-[170px]" : partner.fixedLogo || partner.cropBottom ? "" : "max-h-[29px] max-w-[108px]"} ${partner.forceLightLogo ? "brightness-0 invert" : partner.preserveLightLogo ? "" : "invert"}`}
+                        className={`${partner.cropBottom ? "h-[90px] w-[140px] object-contain [clip-path:inset(0_0_22%_0)]" : partner.fixedLogo ? "h-[29px] w-[108px] object-contain" : "object-contain"} ${partner.cropBottom ? "opacity-50" : "opacity-40"} ${"preserveColors" in partner && partner.preserveColors ? "" : "grayscale contrast-125"} ${"transparentLogo" in partner && partner.transparentLogo || !("preserveColors" in partner && partner.preserveColors) ? "mix-blend-screen" : ""} transition hover:opacity-80 ${partner.largeLogo ? "h-[52px] w-[170px]" : partner.fixedLogo || partner.cropBottom ? "" : "max-h-[29px] max-w-[108px]"} ${partner.forceLightLogo ? "brightness-0 invert" : partner.preserveLightLogo ? "" : "invert"}`}
                       />
                     </span>
                   )}
