@@ -88,7 +88,7 @@ export function SocialMediaPage() {
                       <img
                         src={partner.logo}
                         alt={`${partner.name} partner logo for snowboard athlete Jonas Hasler`}
-                        className={`${partner.cropBottom ? "h-[70px] w-[108px] object-contain [clip-path:inset(0_0_22%_0)]" : partner.fixedLogo ? "h-[29px] w-[108px] object-contain" : "object-contain"} opacity-40 ${partner.preserveColors ? "" : "grayscale contrast-125 mix-blend-screen"} transition hover:opacity-80 ${partner.largeLogo ? "h-[52px] w-[170px]" : partner.fixedLogo || partner.cropBottom ? "" : "max-h-[29px] max-w-[108px]"} ${partner.forceLightLogo ? "brightness-0 invert" : partner.preserveLightLogo ? "" : "invert"}`}
+                        className={`${partner.cropBottom ? "h-[90px] w-[140px] object-contain [clip-path:inset(0_0_22%_0)]" : partner.fixedLogo ? "h-[29px] w-[108px] object-contain" : "object-contain"} ${partner.cropBottom ? "opacity-50" : "opacity-40"} ${partner.preserveColors ? "" : "grayscale contrast-125 mix-blend-screen"} transition hover:opacity-80 ${partner.largeLogo ? "h-[52px] w-[170px]" : partner.fixedLogo || partner.cropBottom ? "" : "max-h-[29px] max-w-[108px]"} ${partner.forceLightLogo ? "brightness-0 invert" : partner.preserveLightLogo ? "" : "invert"}`}
                       />
                     </span>
                   )}
