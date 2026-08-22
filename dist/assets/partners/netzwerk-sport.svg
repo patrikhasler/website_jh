@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Netzwerk Sport</title>
+  <circle cx="64" cy="64" r="57" fill="#8a8a8a"/>
+  <path d="M28 64c0-20 16-36 36-36 13 0 25 7 31 18H78c-4-4-9-6-14-6-13 0-24 11-24 24s11 24 24 24c5 0 10-2 14-6h17c-6 11-18 18-31 18-20 0-36-16-36-36Z" fill="#303030"/>
+  <path d="M57 43h14v42H57z" fill="#303030" transform="rotate(-43 64 64)"/>
+</svg>
