@@ -20,10 +20,14 @@ const trustedPartners = [
   { name: "Insta360", logo: "/assets/partners/insta360.png", href: "https://www.insta360.com/de/" },
   { name: "Sensolar", logo: "/assets/partners/sensolar.png", href: "https://sensolar.ch/" },
   { name: "The Snow League", logo: "/assets/partners/snow-league.svg", href: "https://thesnowleague.com/", preserveLightLogo: true },
+  { name: "Sony", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=www.sony.com", href: "https://www.sony.com/en/", preserveLightLogo: true },
+  { name: "Netzwerk Sport", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=netzwerksport.ch", href: "https://netzwerksport.ch/", preserveLightLogo: true },
+  { name: "Bruno's", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=brunos.ch", href: "http://brunos.ch/", preserveLightLogo: true },
+  { name: "ESN", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=www.esn.com", href: "https://www.esn.com", preserveLightLogo: true },
   {
     name: "Blutstammzellenspende Schweizerisches Rotes Kreuz",
     logo: "/assets/partners/blutspende-srk.svg",
-    href: "https://www.blutstammzellspende.ch/"
+    href: "https://www.blutstammzellenspende.ch/"
   }
 ];
 
