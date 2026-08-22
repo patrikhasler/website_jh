@@ -20,8 +20,8 @@ const trustedPartners = [
   { name: "Insta360", logo: "/assets/partners/insta360.png", href: "https://www.insta360.com/de/" },
   { name: "Sensolar", logo: "/assets/partners/sensolar.png", href: "https://sensolar.ch/" },
   { name: "The Snow League", logo: "/assets/partners/snow-league.svg", href: "https://thesnowleague.com/", preserveLightLogo: true },
-  { name: "Sony", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=www.sony.com", href: "https://www.sony.com/en/", textLogo: true },
-  { name: "Netzwerk Sport", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=netzwerksport.ch", href: "https://netzwerksport.ch/", preserveLightLogo: true },
+  { name: "Sony", logo: "", href: "https://www.sony.com/en/", textLogo: true },
+  { name: "Netzwerk Sport", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=netzwerksport.ch", href: "https://netzwerksport.ch/", preserveLightLogo: true, showName: true },
   { name: "Bruno's", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=brunos.ch", href: "http://brunos.ch/", preserveLightLogo: true, largeLogo: true },
   { name: "ESN", logo: "https://www.google.com/s2/favicons?sz=128&domain_url=www.esn.com", href: "https://www.esn.com", preserveLightLogo: true, largeLogo: true },
   {
@@ -80,15 +80,18 @@ export function SocialMediaPage() {
                   className="flex h-20 w-full items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#CCFF00]"
                 >
                   {partner.textLogo ? (
-                    <span className="font-display text-3xl font-black uppercase tracking-[-0.03em] text-white/45 transition hover:text-white/80">
-                      {partner.name}
+                    <span className="font-serif text-3xl font-bold tracking-[0.08em] text-white/45 transition hover:text-white/80">
+                      {partner.name.toUpperCase()}
                     </span>
                   ) : (
-                    <img
-                      src={partner.logo}
-                      alt={`${partner.name} partner logo for snowboard athlete Jonas Hasler`}
-                      className={`object-contain opacity-40 grayscale contrast-125 mix-blend-screen transition hover:opacity-80 ${partner.largeLogo ? "max-h-[52px] max-w-[170px]" : "max-h-[29px] max-w-[108px]"} ${partner.preserveLightLogo ? "" : "invert"}`}
-                    />
+                    <span className={partner.showName ? "flex items-center gap-2" : "contents"}>
+                      <img
+                        src={partner.logo}
+                        alt={`${partner.name} partner logo for snowboard athlete Jonas Hasler`}
+                        className={`object-contain opacity-40 grayscale contrast-125 mix-blend-screen transition hover:opacity-80 ${partner.largeLogo ? "h-[52px] w-[170px]" : "max-h-[29px] max-w-[108px]"} ${partner.preserveLightLogo ? "" : "invert"}`}
+                      />
+                      {partner.showName && <span className="font-sans text-sm font-semibold text-white/45 transition group-hover:text-white/80">{partner.name}</span>}
+                    </span>
                   )}
                 </a>
               </li>
