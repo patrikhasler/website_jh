@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jonas Hasler | YouTube Kanalbanner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --background: #201f2e;
+        --accent: #ccff00;
+        --foreground: #ffffff;
+        --ink: #0a071a;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        margin: 0;
+        background: var(--background);
+      }
+
+      .banner {
+        position: relative;
+        width: 2560px;
+        height: 1440px;
+        overflow: hidden;
+        background: var(--background);
+      }
+
+      .safe-area {
+        position: absolute;
+        left: 507px;
+        top: 508.5px;
+        width: 1546px;
+        height: 423px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        width: max-content;
+        color: var(--foreground);
+        font-family: "Anton", sans-serif;
+        letter-spacing: 0;
+      }
+
+      .monogram {
+        display: grid;
+        place-items: center;
+        flex: 0 0 180px;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: var(--ink);
+        font-size: 60px;
+        line-height: 1;
+      }
+
+      .name {
+        margin: 0;
+        font-size: 140px;
+        font-weight: 400;
+        line-height: 1.15;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="banner" aria-label="YouTube Kanalbanner Jonas Hasler">
+      <div class="safe-area">
+        <div class="brand">
+          <span class="monogram" aria-hidden="true">JH</span>
+          <h1 class="name">JONAS HASLER</h1>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

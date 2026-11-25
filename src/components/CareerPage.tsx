@@ -7,6 +7,11 @@ type TimelineEntry = {
 
 const timeline: TimelineEntry[] = [
   {
+    year: "2026/27",
+    title: "Season Highlights",
+    description: "2nd Place Halfpipe during World Challenge Event in New Zealand"
+  },
+  {
     year: "2025/26",
     title: "Season Highlights",
     description: "A landmark season across all three freestyle snowboard disciplines.",
@@ -62,6 +67,7 @@ const timeline: TimelineEntry[] = [
 ];
 
 const sponsors = [
+  "Nescafe",
   "Burton",
   "Laax",
   "Oakley",
@@ -103,7 +109,7 @@ export function CareerPage() {
             {[
               { value: "1", suffix: "X", label: "Olympics", detail: "3 Starts" },
               { value: "6", suffix: "+", label: "Top 10 World Cup Finishes" },
-              { value: "3", suffix: "X", label: "Snow League Participations" },
+              { value: "4", suffix: "X", label: "Snow League Participations" },
               { value: "2", suffix: "X", label: "Junior World Champ Podiums" },
               { value: "1", suffix: "X", label: "European Cup Overall Title" },
               { value: "2023", suffix: "", label: "Junior Athlete of the Year" }

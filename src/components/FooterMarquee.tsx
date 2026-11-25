@@ -1,5 +1,6 @@
 export function FooterMarquee() {
   const sponsors = [
+    { src: "/assets/logo-nescafe.png", alt: "Nescafe", href: "https://www.nescafe.com/", darkLogo: true },
     { src: "/assets/logo-burton.png", alt: "Burton", href: "http://www.burton.com" },
     { src: "/assets/logo-oakley.png", alt: "Oakley", href: "http://www.oakley.com" },
     { src: "/assets/logo-tsg.png", alt: "TSG", href: "http://www.ridetsg.com" },
@@ -35,6 +36,14 @@ export function FooterMarquee() {
                       <span className="whitespace-nowrap font-mono text-[8px] uppercase tracking-[0.06em] text-white md:text-[10px]">
                         {sponsor.footerLabel}
                       </span>
+                    </span>
+                  ) : sponsor.darkLogo ? (
+                    <span className="flex h-4 items-center overflow-hidden opacity-40 transition hover:opacity-80 md:h-[1.4rem]">
+                      <img
+                        src={sponsor.src}
+                        alt={`${sponsor.alt} sponsor logo for snowboard athlete Jonas Hasler`}
+                        className="h-8 w-auto max-w-none brightness-0 invert md:h-[2.8rem]"
+                      />
                     </span>
                   ) : (
                     <img

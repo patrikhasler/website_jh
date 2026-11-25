@@ -1,7 +1,7 @@
 const achievements = [
   { value: "1X", label: "Olympia", detail: "3 disciplines: Halfpipe, Slopestyle, Big Air" },
   { value: "6+", label: "Top 10 World Cup Finishes" },
-  { value: "3X", label: "Snow League" },
+  { value: "4X", label: "Snow League" },
   { value: "2X", label: "Junior World Championship Halfpipe Podiums" },
   { value: "🏆", label: "European Cup Overall Halfpipe" },
   { value: "🏆", label: "Junior Athlete of the Year 2023" }
