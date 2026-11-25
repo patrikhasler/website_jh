@@ -112,6 +112,8 @@ function App({ initialPath }: AppProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
   const [bioKey, setBioKey] = useState(0);
+  const [showReel, setShowReel] = useState(false);
+  const [showBackgroundVideo, setShowBackgroundVideo] = useState(false);
   const [path, setPath] = useState(() => initialPath ?? window.location.pathname);
 
   const isAboutPage = path === "/about";
@@ -121,6 +123,18 @@ function App({ initialPath }: AppProps) {
   const isCareerPage = path === "/career";
   const isAutographPage = path === "/autograph";
   const isWhyPage = path === "/why";
+
+  useEffect(() => {
+    setShowReel(false);
+  }, [path]);
+
+  useEffect(() => {
+    const preference = window.matchMedia("(min-width: 768px) and (prefers-reduced-motion: no-preference)");
+    const update = () => setShowBackgroundVideo(preference.matches);
+    update();
+    preference.addEventListener("change", update);
+    return () => preference.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -256,18 +270,43 @@ function App({ initialPath }: AppProps) {
         <>
           <main className="relative z-20 flex min-h-screen flex-1 items-center justify-center px-4 pb-32 pt-24 md:px-8 md:pt-28">
             <div className="relative z-20 flex w-full max-w-[1600px] flex-col items-center">
-              <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-white/50 md:text-xs">Halfpipe / Slopestyle / Big Air</p>
+              {!showReel && (
+                <>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-white/50 md:text-xs">Halfpipe / Slopestyle / Big Air</p>
 
-              <h1 className="mt-4 text-center">
-                <span className="outline-text block font-display text-[17px] uppercase leading-[0.92] tracking-[0.06em] sm:text-[24px] md:text-[40px] lg:text-[56px] xl:text-[70px]">
-                  Built For
-                </span>
-                <span className="mt-0.5 block font-display text-[50px] uppercase leading-[0.86] tracking-[0.04em] text-[#CCFF00] sm:mt-1 sm:text-[78px] md:mt-2 md:text-[120px] lg:text-[150px] xl:text-[180px]">
-                  <ScrambleText text={WORDS[wordIndex]} />
-                </span>
-              </h1>
+                  <h1 className="mt-4 text-center">
+                    <span className="outline-text block font-display text-[17px] uppercase leading-[0.92] tracking-[0.06em] sm:text-[24px] md:text-[40px] lg:text-[56px] xl:text-[70px]">
+                      Built For
+                    </span>
+                    <span className="mt-0.5 block font-display text-[50px] uppercase leading-[0.86] tracking-[0.04em] text-[#CCFF00] sm:mt-1 sm:text-[78px] md:mt-2 md:text-[120px] lg:text-[150px] xl:text-[180px]">
+                      <ScrambleText text={WORDS[wordIndex]} />
+                    </span>
+                  </h1>
 
-              <AnimatedBio remountKey={bioKey} />
+                  <AnimatedBio remountKey={bioKey} />
+                </>
+              )}
+              <button
+                type="button"
+                onClick={() => setShowReel((current) => !current)}
+                aria-expanded={showReel}
+                aria-controls="homepage-reel"
+                className="mt-6 border border-white/50 px-5 py-3 font-mono text-xs uppercase tracking-[0.12em] text-white transition hover:border-[#CCFF00] hover:text-[#CCFF00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#CCFF00]"
+              >
+                {showReel ? "Close Reel" : "Watch Reel"}
+              </button>
+              <div id="homepage-reel" className={showReel ? "mt-6 w-full" : "hidden"}>
+                {showReel && (
+                  <video
+                    className="mx-auto h-[60vh] w-auto max-w-full bg-black"
+                    src="/assets/homepage-web.mp4"
+                    controls
+                    autoPlay
+                    playsInline
+                    aria-label="Jonas Hasler snowboard reel"
+                  />
+                )}
+              </div>
             </div>
           </main>
 
@@ -283,17 +322,30 @@ function App({ initialPath }: AppProps) {
                 className="hero-bg-base h-full w-full brightness-[0.55] grayscale contrast-125"
               />
             </picture>
-            <picture className="pointer-events-auto absolute inset-0 block h-full w-full">
-              <source srcSet="/assets/14-hero.avif" type="image/avif" />
-              <img
-                src="/assets/14.jpg"
-                alt="Jonas Hasler performing a freestyle snowboard trick"
-                width="2400"
-                height="1600"
-                fetchPriority="high"
-                className="hero-bg-animated hero-bg-foreground h-full w-full brightness-95 grayscale contrast-125"
+            {showBackgroundVideo && !showReel ? (
+              <video
+                src="/assets/homepage-web.mp4"
+                className="absolute inset-0 h-full w-full object-cover brightness-95 grayscale contrast-125"
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-hidden="true"
+                onError={() => setShowBackgroundVideo(false)}
               />
-            </picture>
+            ) : (
+              <picture className="pointer-events-auto absolute inset-0 block h-full w-full">
+                <source srcSet="/assets/14-hero.avif" type="image/avif" />
+                <img
+                  src="/assets/14.jpg"
+                  alt="Jonas Hasler performing a freestyle snowboard trick"
+                  width="2400"
+                  height="1600"
+                  fetchPriority="high"
+                  className="hero-bg-animated hero-bg-foreground h-full w-full brightness-95 grayscale contrast-125"
+                />
+              </picture>
+            )}
           </div>
         </>
       )}
